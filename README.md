@@ -7,16 +7,16 @@
 I heard give me a new name, it will be easier for you to find me ☺️
 
 ## Core Features
-
-- **Auto Alias**: Generate two by default, English and Pinyin
-  - 1 Automatically generate an alias of `English translation` + `hash` and save it in the `custom-slug` attribute.
-  - 2 Automatically generate an alias of `pingyin` + `hash` and save it in the `custom-pingyin` attribute.
+- **Auto Alias**: Generate three by default, English, Pinyin and Pinyin initials
+  - 1 Automatically generate an alias of `English translation` + `hash` and save it in the `custom-slug` property.
+  - 2 Automatically generate an alias of `pingyin` + `hash` and save it in the `custom-pingyin` property.
+  - 2 Automatically generate an alias of `Pinyin initials` + `hash` and save it in the `custom-nicknames` property.
 
   Note 1: Use the `custom-slug` key for saving, which is compatible with the `siyuan-plugin-publisher` plugin.
 
   Note 2: The purpose of hash is to prevent duplicate aliases of two documents. Just like in reality, if you call two people with the same name, who will agree, haha, right?
 
-- **Support Configuration**: In the right-click menu, you can customize other aliases and save them in the `custom-nicknames` property, separated by `,` commas in English
+- **Support configuration**: In the right-click menu, you can customize other aliases and save them in the `custom-nicknames` attribute, and separate them from the aliases automatically generated above with commas `,` in English
 
 ## FAQ
 
