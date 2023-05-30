@@ -23,38 +23,59 @@
  * questions.
  */
 
-import {App, getFrontend, IObject, Plugin} from "siyuan"
-import { initTopbar } from "./topbar"
-import { createLogger } from "./utils/simple-logger"
-import KernelApi from "./api/kernel-api"
-
-import "./index.styl"
+import { BaseApi, SiyuanData } from "./base-api"
 
 /**
- * 别名插件
+ * 思源笔记服务端API v2.8.9
+ *
+ * @see {@link https://github.com/siyuan-note/siyuan/blob/master/API_zh_CN.md API}
  *
  * @author terwer
  * @version 0.0.1
  * @since 0.0.1
  */
-export default class SlugPlugin extends Plugin {
-  public isMobile: boolean
-  public logger
-  public kernelApi: KernelApi
-
-  constructor(options: { app: App; id: string; name: string; i18n: IObject }) {
-    super(options)
-
-    this.logger = createLogger("index")
-    this.kernelApi = new KernelApi()
+class KernelApi extends BaseApi {
+  /**
+   * 获取块属性
+   */
+  public async getBlockAttrs(blockId: string): Promise<SiyuanData> {
+    return await this.siyuanRequest("/api/attr/getBlockAttrs", {
+      id: blockId,
+    })
   }
 
-  async onload() {
-    const frontEnd = getFrontend()
-    this.isMobile = frontEnd === "mobile" || frontEnd === "browser-mobile"
-
-    await initTopbar(this)
+  /**
+   * 设置块属性
+   */
+  public async setBlockAttrs(blockId: string, attrs: any): Promise<SiyuanData> {
+    return await this.siyuanRequest("/api/attr/setBlockAttrs", {
+      id: blockId,
+      attrs: attrs,
+    })
   }
 
-  onLayoutReady() {}
+  /**
+   * 以id获取思源块信息
+   * @param blockId 块ID
+   */
+  public async getBlockByID(blockId: string): Promise<SiyuanData> {
+    const stmt = `select *
+                from blocks
+                where id = '${blockId}'`
+    return await this.sql(stmt)
+  }
+
+  /**
+   * 以sql发送请求
+   * @param sql sql
+   */
+  public async sql(sql: string): Promise<SiyuanData> {
+    const sqldata = {
+      stmt: sql,
+    }
+    const url = "/api/query/sql"
+    return await this.siyuanRequest(url, sqldata)
+  }
 }
+
+export default KernelApi

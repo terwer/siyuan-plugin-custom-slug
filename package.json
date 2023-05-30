@@ -32,5 +32,9 @@
     "vite": "^4.3.7",
     "vite-plugin-static-copy": "^0.15.0",
     "vite-plugin-zip-pack": "^1.0.5"
+  },
+  "dependencies": {
+    "shorthash2": "^1.0.3",
+    "transliteration": "^2.3.5"
   }
 }

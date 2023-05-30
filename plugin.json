@@ -4,6 +4,8 @@
   "url": "https://github.com/terwer/siyuan-plugin-custom-slug",
   "version": "0.0.1",
   "minAppVersion": "2.8.9",
+  "backends": ["windows", "linux", "darwin"],
+  "frontends": ["desktop"],
   "displayName": {
     "en_US": "Document Slug",
     "zh_CN": "文档别名"

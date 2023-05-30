@@ -1,4 +1,8 @@
 {
-    "cancel": "Cancel",
-    "save": "Save"
+  "cancel": "Cancel",
+  "save": "Save",
+  "slug": "Slug",
+  "makeSlug": "Generate document aliases",
+  "makeSlugOk": "I have already made a name for you, English translation, pinyin, pinyin initials, don't forget to open the alias search~",
+  "viewSlug": "View document aliases"
 }

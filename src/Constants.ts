@@ -23,38 +23,9 @@
  * questions.
  */
 
-import {App, getFrontend, IObject, Plugin} from "siyuan"
-import { initTopbar } from "./topbar"
-import { createLogger } from "./utils/simple-logger"
-import KernelApi from "./api/kernel-api"
-
-import "./index.styl"
-
-/**
- * 别名插件
- *
- * @author terwer
- * @version 0.0.1
- * @since 0.0.1
- */
-export default class SlugPlugin extends Plugin {
-  public isMobile: boolean
-  public logger
-  public kernelApi: KernelApi
-
-  constructor(options: { app: App; id: string; name: string; i18n: IObject }) {
-    super(options)
-
-    this.logger = createLogger("index")
-    this.kernelApi = new KernelApi()
-  }
-
-  async onload() {
-    const frontEnd = getFrontend()
-    this.isMobile = frontEnd === "mobile" || frontEnd === "browser-mobile"
-
-    await initTopbar(this)
-  }
-
-  onLayoutReady() {}
-}
+export const workspaceDir = `${(window as any).siyuan.config.system.workspaceDir}`
+export const dataDir = `${(window as any).siyuan.config.system.dataDir}`
+export const mediaDir = `./assets`
+export const isDev = process.env.DEV_MODE === "true"
+export const siyuanApiUrl = ""
+export const siyuanApiToken = ""

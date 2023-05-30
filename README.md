@@ -8,21 +8,21 @@ I heard give me a new name, it will be easier for you to find me ☺️
 
 ## Core Features
 - **Auto Alias**: Generate three by default, English, Pinyin and Pinyin initials
-  - 1 Automatically generate an alias of `English translation` + `hash` and save it in the `custom-slug` property.
-  - 2 Automatically generate an alias of `pinyin` + `hash` and save it in the `custom-pinyin` property.
-  - 2 Automatically generate an alias of `Pinyin initials` + `hash` and save it in the `custom-nicknames` property.
+  - 1 Automatically generate an alias of `English translation` + `hash` and save it in `name` and `custom-slug` attributes.
+  - 2 Automatically generate the alias of `pinyin` + `hash` and save it in the `alias` property.
+  - 2 Automatically generate an alias of `Pinyin initials` + `hash` and save it in the `alias` property.
 
-  Note 1: Use the `custom-slug` key for saving, which is compatible with the `siyuan-plugin-publisher` plugin.
+  Note 1: An additional `custom-slug` key is saved for compatibility with the `siyuan-plugin-publisher` plugin.
 
   Note 2: The purpose of hash is to prevent duplicate aliases of two documents. Just like in reality, if you call two people with the same name, who will agree, haha, right?
 
-- **Support configuration**: In the right-click menu, you can customize other aliases and save them in the `custom-nicknames` attribute, and separate them from the aliases automatically generated above with commas `,` in English
+- **Support viewing**: In the right-click menu, you can view and modify the naming and alias of the current setting
 
 ## FAQ
 
 * Q1: What is the origin of this plugin?
 
-  A1: Refer to [Automatically add pinyin as aliases to new files](https://github.com/siyuan-note/siyuan/issues/8396). If the alias is automatically generated, after the alias search is enabled, the efficiency can be greatly improved. Because, you think, if you type an English character or pinyin, it will be quickly than Chinese characters, right?
+  A1: Refer to [Automatically add pinyin as aliases to new files](https://github.com/siyuan-note/siyuan/issues/8396). If the alias is automatically generated, after the alias search is enabled, the efficiency can be greatly improved. Because, you think, typing an English character or pinyin must be faster than Chinese characters, right?
 
 * Q2: Can it be automatically generated when creating a new document?
 
@@ -30,11 +30,11 @@ I heard give me a new name, it will be easier for you to find me ☺️
 
 * Q3: Why can't the automatically generated key be changed?
 
-  A3: This is for compatibility with subsequent `siyuan-plugin-publisher` plugin , and this key is actually only a developer relationship. Ordinary users actually have no obvious perception, it is just a convention. Of course, if there is a strong demand for changes, subsequent versions may consider supporting custom named keys.
+  A3: This is for compatibility with subsequent publishing tools, and this key is actually only concerned by developers. Ordinary users have no obvious perception, it is just a convention. Of course, if there is a strong demand for changes, subsequent versions may also consider supporting custom named keys. Note: The key of non-custom attribute cannot be modified.
 
 * Q4: How to enable alias search?
 
-  A4: Go to `Settings` -> `Search`, you can turn on the alias switch.
+  A4: Go to `Settings` -> `Search`, you can find the switch to enable alias search, you can choose naming, alias and custom attributes.
 
   ![](https://raw.githubusercontent.com/terwer/siyuan-plugin-custom-slug/main/assets/slug-setting.png)
 
@@ -45,6 +45,12 @@ I heard give me a new name, it will be easier for you to find me ☺️
 - first version
 
 For more update records, please check [CHANGELOG](https://github.com/terwer/siyuan-plugin-custom-slug/blob/main/CHANGELOG.md)
+
+## TODO
+
+**v0.0.2 TODO**
+
+- [ ] Internationalization of some resources
 
 ## Donate
 
