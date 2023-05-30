@@ -35,7 +35,7 @@
 
 * Q4：怎么开启别名搜索？
 
-  A4：到 `设置` -> `搜索` 里面，可以开启别名的开关。
+  A4：到 `设置` -> `搜索` 里面，可以找到开启别名搜索的开关。
 
   ![](https://raw.githubusercontent.com/terwer/siyuan-plugin-custom-slug/main/assets/slug-setting.png)
 
