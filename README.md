@@ -32,6 +32,12 @@ I heard give me a new name, it will be easier for you to find me ☺️
 
   A3: This is for compatibility with subsequent `siyuan-plugin-publisher` plugin , and this key is actually only a developer relationship. Ordinary users actually have no obvious perception, it is just a convention. Of course, if there is a strong demand for changes, subsequent versions may consider supporting custom named keys.
 
+* Q4: How to enable alias search?
+
+  A4: Go to `Settings` -> `Search`, you can turn on the alias switch.
+
+  ![](https://raw.githubusercontent.com/terwer/siyuan-plugin-custom-slug/main/asset/slug-setting.png)
+
 ## Changelog
 
 **v0.0.1 major update**

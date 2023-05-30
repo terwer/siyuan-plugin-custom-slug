@@ -46,14 +46,11 @@
   </Typo>
 </div>
 
-<style lang="scss">
-  #hello {
-    margin: 20px;
-    div {
-      margin-bottom: 10px;
-    }
-  }
-  .__text-right {
-    text-align: right;
-  }
+<style lang="stylus">
+  #hello
+    margin 20px
+    div
+      margin-bottom: 10px
+  .__text-right
+    text-align: right
 </style>

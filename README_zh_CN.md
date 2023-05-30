@@ -32,6 +32,12 @@
 
   A3：这个是为了和后续的发布工具兼容，而且这个 key其实只是开发者关系，普通用户其实无明显感知，一个约定而已。当然，如果强烈要求改的话，后续版本可考虑支持自定义命名 key 。
 
+* Q4：怎么开启别名搜索？
+
+  A4：到 `设置` -> `搜索` 里面，可以开启别名的开关。
+
+  ![](https://raw.githubusercontent.com/terwer/siyuan-plugin-custom-slug/main/asset/slug-setting.png)
+
 ## 更新历史
 **v0.0.1 主要更新**
 
