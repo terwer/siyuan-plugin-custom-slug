@@ -10,7 +10,7 @@
 
 - **自动别名**：默认生成三个，英文、拼音和拼音首字母
   - 1 自动生成 `英文翻译` + `hash` 的别名，保存到 `custom-slug` 属性中。
-  - 2 自动生成 `pingyin` + `hash` 的别名，保存到 `custom-pingyin` 属性中。
+  - 2 自动生成 `pinyin` + `hash` 的别名，保存到 `custom-pinyin` 属性中。
   - 2 自动生成 `拼音首字母` + `hash` 的别名，保存到 `custom-nicknames` 属性中。
   
   注1：保存用 `custom-slug` 这个key，可以与发布工具插件兼容。

@@ -9,7 +9,7 @@ I heard give me a new name, it will be easier for you to find me ☺️
 ## Core Features
 - **Auto Alias**: Generate three by default, English, Pinyin and Pinyin initials
   - 1 Automatically generate an alias of `English translation` + `hash` and save it in the `custom-slug` property.
-  - 2 Automatically generate an alias of `pingyin` + `hash` and save it in the `custom-pingyin` property.
+  - 2 Automatically generate an alias of `pinyin` + `hash` and save it in the `custom-pinyin` property.
   - 2 Automatically generate an alias of `Pinyin initials` + `hash` and save it in the `custom-nicknames` property.
 
   Note 1: Use the `custom-slug` key for saving, which is compatible with the `siyuan-plugin-publisher` plugin.
