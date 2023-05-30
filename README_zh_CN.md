@@ -36,7 +36,7 @@
 
   A4：到 `设置` -> `搜索` 里面，可以开启别名的开关。
 
-  ![](https://raw.githubusercontent.com/terwer/siyuan-plugin-custom-slug/main/asset/slug-setting.png)
+  ![](https://raw.githubusercontent.com/terwer/siyuan-plugin-custom-slug/main/assets/slug-setting.png)
 
 ## 更新历史
 **v0.0.1 主要更新**

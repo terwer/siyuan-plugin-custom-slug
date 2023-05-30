@@ -36,7 +36,7 @@ I heard give me a new name, it will be easier for you to find me ☺️
 
   A4: Go to `Settings` -> `Search`, you can turn on the alias switch.
 
-  ![](https://raw.githubusercontent.com/terwer/siyuan-plugin-custom-slug/main/asset/slug-setting.png)
+  ![](https://raw.githubusercontent.com/terwer/siyuan-plugin-custom-slug/main/assets/slug-setting.png)
 
 ## Changelog
 
