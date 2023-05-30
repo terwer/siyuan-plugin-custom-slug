@@ -1,0 +1,24 @@
+{
+  "name": "siyuan-plugin-custom-slug",
+  "author": "terwer",
+  "url": "https://github.com/terwer/siyuan-plugin-custom-slug",
+  "version": "0.0.1",
+  "minAppVersion": "2.8.9",
+  "displayName": {
+    "en_US": "Document Slug",
+    "zh_CN": "文档别名"
+  },
+  "description": {
+    "en_US": "I heard give me a new name, it will be easier for you to find me ☺\uFE0F",
+    "zh_CN": "听说给我起个新名字，你更容易找到我☺\uFE0F"
+  },
+  "readme": {
+    "en_US": "README.md",
+    "zh_CN": "README_zh_CN.md"
+  },
+  "funding": {
+    "custom": [
+      "https://afdian.net/a/terwer"
+    ]
+  }
+}
