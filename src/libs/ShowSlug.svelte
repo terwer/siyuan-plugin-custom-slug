@@ -41,7 +41,7 @@
     dialog.destroy()
 
     await AttrService.doSaveAttrs(pluginInstance, attName, attAlias)
-    showMessage(`属性保存成功`, 2000, "info")
+    showMessage(`${pluginInstance.i18n.tipsAttrSaveOk}`, 2000, "info")
   }
 
   const onCancel = async () => {
@@ -52,7 +52,7 @@
     const pageId = PageUtil.getPageId()
     const data = await pluginInstance.kernelApi.getBlockAttrs(pageId)
     if (data.code !== 0) {
-      showMessage(`属性获取失败 => ${data.msg}`, 7000, "error")
+      showMessage(`${pluginInstance.i18n.tipsAttrFetchError} => ${data.msg}`, 7000, "error")
       return
     }
     attrs = data.data
@@ -65,23 +65,28 @@
 <div class="config__tab-container">
   <label class="fn__flex b3-label">
     <div class="fn__flex-1">
-      命名
-      <div class="b3-label__text">自动生成，规则是：[英文翻译] + [hash]</div>
+      {pluginInstance.i18n.name}
+      <div class="b3-label__text">{pluginInstance.i18n.nameTips}</div>
       <div class="fn__hr" />
-      <input class="b3-text-field fn__block" placeholder="命名，主要用于搜索" spellcheck="false" bind:value={attName} />
+      <input
+        class="b3-text-field fn__block"
+        placeholder={pluginInstance.i18n.namePlaceholder}
+        spellcheck="false"
+        bind:value={attName}
+      />
     </div>
   </label>
 
   <label class="fn__flex b3-label">
     <div class="fn__flex-1">
-      别名
+      {pluginInstance.i18n.alias}
       <div class="b3-label__text">
-        自动生成，规则是：[pinyin] + [hash]、[拼音首字母] + [hash]，别名之间用英文 `,` 逗号分割
+        {pluginInstance.i18n.aliasTips}
       </div>
       <div class="fn__hr" />
       <textarea
         class="b3-text-field fn__block"
-        placeholder="为该块设置别名，别名之间用英文逗号分割"
+        placeholder={pluginInstance.i18n.aliasPlaceholder}
         rows="4"
         spellcheck="false"
         bind:value={attAlias}
@@ -90,8 +95,8 @@
   </label>
 
   <div class="b3-dialog__action">
-    <button class="b3-button b3-button--cancel" on:click={onCancel}>取消</button>
+    <button class="b3-button b3-button--cancel" on:click={onCancel}>{pluginInstance.i18n.cancel}</button>
     <div class="fn__space" />
-    <button class="b3-button b3-button--text" on:click={onSaveAttr}>确定</button>
+    <button class="b3-button b3-button--text" on:click={onSaveAttr}>{pluginInstance.i18n.save}</button>
   </div>
 </div>

@@ -38,15 +38,15 @@ export class AttrService {
     try {
       const pageId = PageUtil.getPageId()
       if (!pageId) {
-        showMessage(`请先打开一个文档！`, 7000, "error")
+        showMessage(`${pluginInstance.i18n.tipsErrOpenDoc}`, 7000, "error")
         flag = false
         return flag
       }
 
-      showMessage(`自动生成别名中，请稍后...`, 1000, "info")
+      showMessage(`${pluginInstance.i18n.tipsSlugGenerating}...`, 1000, "info")
       const pageData = await pluginInstance.kernelApi.getBlockByID(pageId)
       if (pageData.code !== 0 || (pageData.data as any).length == 0) {
-        showMessage(`页面信息获取失败`)
+        showMessage(`${pluginInstance.i18n.tipsPageInfoError}`)
         flag = false
         return flag
       }
@@ -73,7 +73,7 @@ export class AttrService {
       const attAlias = [pinyin, pinyinInitials].join()
       await this.doSaveAttrs(pluginInstance, attName, attAlias)
     } catch (e) {
-      showMessage(`别名生成失败，可能是未打开文档！详细错误信息 => ${e.toString()}`, 7000, "error")
+      showMessage(`${pluginInstance.i18n.tipsSlugGenerateError} => ${e.toString()}`, 7000, "error")
       flag = false
     }
     return flag
@@ -88,7 +88,7 @@ export class AttrService {
     }
     const data = await pluginInstance.kernelApi.setBlockAttrs(pageId, customAttrs)
     if (data.code !== 0) {
-      showMessage(`属性获取失败 => ${data.msg}`, 7000, "error")
+      showMessage(`${pluginInstance.i18n.tipsAttrsFetchError} => ${data.msg}`, 7000, "error")
       return
     }
   }

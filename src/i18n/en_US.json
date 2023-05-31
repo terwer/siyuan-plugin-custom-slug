@@ -4,5 +4,18 @@
   "slug": "Slug",
   "makeSlug": "Generate document aliases",
   "makeSlugOk": "I have already made a name for you, English translation, pinyin, pinyin initials, don't forget to open the alias search~",
-  "viewSlug": "View document aliases"
+  "viewSlug": "View document aliases",
+  "tipsAttrSaveOk": "Attribute saved successfully",
+  "tipsAttrFetchError": "Attribute acquisition failed",
+  "name": "Name",
+  "alias": "Alias",
+  "nameTips": "Automatically generated, the rule is: [English translation] + [hash]",
+  "aliasTips": "Automatically generated, the rule is: [pinyin] + [hash], [pinyin initial letter] + [hash], the aliases are separated by commas `,` in English",
+  "namePlaceholder": "Naming, mainly for searching",
+  "aliasPlaceholder": "Set an alias for this block, separated by commas",
+  "tipsErrOpenDoc": "Please open a document first!",
+  "tipsSlugGenerating": "Automatically generating aliases, please wait",
+  "tipsPageInfoError": "Failed to obtain page information",
+  "tipsSlugGenerateError": "Alias generation failed, possibly because the document is not open! detailed error message",
+  "tipsAttrsFetchError": "Attribute acquisition failed"
 }

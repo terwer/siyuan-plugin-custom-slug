@@ -4,5 +4,18 @@
   "slug": "文档别名",
   "makeSlug": "生成文档别名",
   "makeSlugOk": "已经为你起好了名字，英文翻译、拼音、拼音首字母，可在右键菜单或者属性菜单查看结果。别忘了打开别名搜索哟~",
-  "viewSlug": "查看文档别名"
+  "viewSlug": "查看文档别名",
+  "tipsAttrSaveOk": "属性保存成功",
+  "tipsAttrFetchError": "属性获取失败",
+  "name": "命名",
+  "alias": "别名",
+  "nameTips": "自动生成，规则是：[英文翻译] + [hash]",
+  "aliasTips": "自动生成，规则是：[pinyin] + [hash]、[拼音首字母] + [hash]，别名之间用英文 `,` 逗号分割",
+  "namePlaceholder": "命名，主要用于搜索",
+  "aliasPlaceholder": "为该块设置别名，别名之间用英文逗号分割",
+  "tipsErrOpenDoc": "请先打开一个文档！",
+  "tipsSlugGenerating": "自动生成别名中，请稍后",
+  "tipsPageInfoError": "页面信息获取失败",
+  "tipsSlugGenerateError": "别名生成失败，可能是未打开文档！详细错误信息",
+  "tipsAttrsFetchError": "属性获取失败"
 }
