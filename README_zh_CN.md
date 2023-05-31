@@ -2,7 +2,7 @@
 
 # 文档别名
 
-<img src="./icon.png" width="160" height="160" alt="icon">
+![](./icon.png)
 
 听说给我起个新名字，你更容易找到我☺️
 

@@ -2,7 +2,7 @@
 
 # siyuan-plugin-custom-slug
 
-![](https://raw.githubusercontent.com/terwer/siyuan-plugin-custom-slug/main/icon.png)
+![](./icon.png)
 
 I heard give me a new name, it will be easier for you to find me ☺️
 
@@ -36,7 +36,7 @@ I heard give me a new name, it will be easier for you to find me ☺️
 
   A4: Go to `Settings` -> `Search`, you can find the switch to enable alias search, you can choose naming, alias and custom attributes.
 
-  ![](https://raw.githubusercontent.com/terwer/siyuan-plugin-custom-slug/main/assets/slug-setting.png)
+  ![](./assets/slug-setting.png)
 
 ## Changelog
 
