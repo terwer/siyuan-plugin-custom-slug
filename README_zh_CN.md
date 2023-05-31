@@ -2,7 +2,7 @@
 
 # 文档别名
 
-![](https://raw.githubusercontent.com/terwer/siyuan-plugin-custom-slug/main/icon.png)
+<img src="./icon.png" width="160" height="160" alt="icon">
 
 听说给我起个新名字，你更容易找到我☺️
 
@@ -37,7 +37,7 @@
 
   A4：到 `设置` -> `搜索` 里面，可以找到开启别名搜索的开关，您可以选择命名、别名以及自定义属性。
 
-  ![](https://raw.githubusercontent.com/terwer/siyuan-plugin-custom-slug/main/assets/slug-setting.png)
+  ![](./assets/slug-setting.png)
 
 ## 更新历史
 
