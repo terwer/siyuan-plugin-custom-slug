@@ -40,17 +40,19 @@ I heard give me a new name, it will be easier for you to find me ☺️
 
 ## Changelog
 
+**v0.0.2 major update**
+
+### Features
+- Add some international resources ([b61cfad](https://github.com/terwer/siyuan-plugin-custom-slug/commit/b61cfad795185878e7ec7ca55e158e32d8934de0))
+- Adjust preview image and icon size ([f219a40](https://github.com/terwer/siyuan-plugin-custom-slug/commit/f219a40cbf6f15ecc8bee3c996d352ae83699124))
+### Refactoring
+- Fix build error ([a8ea298](https://github.com/terwer/siyuan-plugin-custom-slug/commit/a8ea2988bffbf0372b1c90b885248c1af9afcc39))
+
 **v0.0.1 major update**
 
 - first version
 
 For more update records, please check [CHANGELOG](https://github.com/terwer/siyuan-plugin-custom-slug/blob/main/CHANGELOG.md)
-
-## TODO
-
-**v0.0.2 TODO**
-
-- [ ] Internationalization of some resources
 
 ## Donate
 

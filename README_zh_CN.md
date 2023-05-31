@@ -41,17 +41,19 @@
 
 ## 更新历史
 
+**v0.0.2 主要更新**
+
+### 特性
+- 补充部分国际化资源 ([b61cfad](https://github.com/terwer/siyuan-plugin-custom-slug/commit/b61cfad795185878e7ec7ca55e158e32d8934de0))
+- 调整预览图、图标尺寸 ([f219a40](https://github.com/terwer/siyuan-plugin-custom-slug/commit/f219a40cbf6f15ecc8bee3c996d352ae83699124))
+### 重构
+- 修复构建错误 ([a8ea298](https://github.com/terwer/siyuan-plugin-custom-slug/commit/a8ea2988bffbf0372b1c90b885248c1af9afcc39))
+
 **v0.0.1 主要更新**
 
 - 第一个版本
 
 更多更新记录请查看 [CHANGELOG](https://github.com/terwer/siyuan-plugin-custom-slug/blob/main/CHANGELOG.md)
-
-## TODO
-
-**v0.0.2 TODO**
-
-- [ ] 部分资源国际化
 
 ## 捐赠
 

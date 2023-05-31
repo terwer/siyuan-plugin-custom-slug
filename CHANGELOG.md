@@ -3,7 +3,10 @@
 ## Unreleased ([compare](https://github.com/terwer/siyuan-plugin-custom-slug/compare/v0.0.1...HEAD)) (2023-05-31)
 
 ### Features
-- 调整预览图、图标尺寸 ([04db2a6](https://github.com/terwer/siyuan-plugin-custom-slug/commit/04db2a62ef08d15283d8b2afe1c80328c4dbaa0c))
+- 补充部分国际化资源 ([b61cfad](https://github.com/terwer/siyuan-plugin-custom-slug/commit/b61cfad795185878e7ec7ca55e158e32d8934de0))
+- 调整预览图、图标尺寸 ([f219a40](https://github.com/terwer/siyuan-plugin-custom-slug/commit/f219a40cbf6f15ecc8bee3c996d352ae83699124))
+### Chore
+- 修复构建错误 ([a8ea298](https://github.com/terwer/siyuan-plugin-custom-slug/commit/a8ea2988bffbf0372b1c90b885248c1af9afcc39))
 <a name="v0.0.1"></a>
 ## [v0.0.1](https://github.com/terwer/siyuan-plugin-custom-slug/compare/98f2d8c2f7e1b3ee00c90fd15e1c9feece3d70df...v0.0.1) (2023-05-30)
 - 第一个可用版本 ([9eafdcb](https://github.com/terwer/siyuan-plugin-custom-slug/commit/9eafdcb6aa421f5dd5f2276e07f5f555eb7385f5))
