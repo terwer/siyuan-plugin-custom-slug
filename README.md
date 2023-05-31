@@ -2,7 +2,7 @@
 
 # siyuan-plugin-custom-slug
 
-![](./icon.png)
+<img src="./icon.png" width="160" height="160" alt="icon">
 
 I heard give me a new name, it will be easier for you to find me ☺️
 
