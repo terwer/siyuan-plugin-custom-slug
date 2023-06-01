@@ -46,6 +46,7 @@ export async function initTopbar(pluginInstance: SlugPlugin) {
   })
 
   topBarElement.addEventListener("click", async () => {
+    showMessage(`${pluginInstance.i18n.tipsSlugGenerating}...`, 1000, "info")
     const result = await AttrService.autoGenerateAttrs(pluginInstance)
     if (!result) {
       return

@@ -27,6 +27,7 @@ module.exports = {
     semi: "off",
     quotes: "off",
     "no-undef": "off",
+    "no-async-promise-executor": "off",
     "@typescript-eslint/no-empty-function": "off",
     "@typescript-eslint/no-var-requires": "off",
     "@typescript-eslint/no-this-alias": "off",

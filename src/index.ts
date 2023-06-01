@@ -23,12 +23,15 @@
  * questions.
  */
 
-import { App, getFrontend, IObject, Plugin } from "siyuan"
+import { App, getFrontend, IObject, Plugin, showMessage } from "siyuan"
 import { initTopbar } from "./topbar"
-import { createLogger } from "./utils/simple-logger"
 import KernelApi from "./api/kernel-api"
+import { simpleLogger } from "zhi-lib-base"
+import { isDev } from "./Constants"
 
 import "./index.styl"
+import { createCancelableDebounce } from "./utils/utils"
+import { AttrService } from "./service/attrService"
 
 /**
  * 别名插件
@@ -41,11 +44,12 @@ export default class SlugPlugin extends Plugin {
   public isMobile: boolean
   public logger
   public kernelApi: KernelApi
+  private renameEvent: any
 
   constructor(options: { app: App; id: string; name: string; i18n: IObject }) {
     super(options)
 
-    this.logger = createLogger("index")
+    this.logger = simpleLogger("index", "custom-slug", isDev)
     this.kernelApi = new KernelApi()
   }
 
@@ -56,5 +60,45 @@ export default class SlugPlugin extends Plugin {
     await initTopbar(this)
   }
 
-  onLayoutReady() {}
+  onLayoutReady() {
+    const handleRenameEvent = createCancelableDebounce(async () => {
+      const result = await AttrService.autoGenerateAttrs(this)
+      if (!result) {
+        return
+      }
+      this.showSuccess()
+    }, 2000)
+
+    this.renameEvent = (e) => {
+      // 不是 rename 事件，忽略，防止误触发
+      if (!e || e.detail.cmd !== "rename") {
+        return
+      }
+
+      this.showLoading()
+      handleRenameEvent()
+    }
+    this.eventBus.on("ws-main", this.renameEvent)
+    this.logger.info("eventBus ws-main enabled")
+  }
+
+  onunload() {
+    this.eventBus.off("ws-main", this.renameEvent)
+    this.logger.info("eventBus ws-main destroyed")
+  }
+
+  //////////////////////////////////////////////////////////////////
+  // private function
+  //////////////////////////////////////////////////////////////////
+  private showLoading() {
+    document.querySelector(".protyle:not(.fn__none) .protyle-title .protyle-attr").classList.add("loading")
+    document.querySelector(".protyle:not(.fn__none) .protyle-title .protyle-attr.loading").innerHTML =
+      this.i18n.tipsLoading
+    // showMessage(`${this.i18n.tipsSlugGenerating}...`, 1000, "info")
+  }
+
+  private showSuccess() {
+    document.querySelector(".protyle:not(.fn__none) .protyle-title .protyle-attr").classList.remove("loading")
+    // showMessage(`${this.i18n.makeSlugOk}`, 2000, "info")
+  }
 }

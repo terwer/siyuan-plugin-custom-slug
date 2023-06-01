@@ -24,6 +24,7 @@
  */
 
 import { slugify } from "transliteration"
+import debounce from "lodash.debounce"
 
 /**
  * 中文翻译成英文别名
@@ -79,4 +80,39 @@ export const removeTitleNumber = (str: string): string => {
   newstr = newstr.replace(publisherRegex, "")
 
   return newstr
+}
+
+/**
+ * 封装可取消的防抖函数
+ *
+ * @param {Function} fn - 需要执行的函数
+ * @param {number} wait - 等待时间
+ * @returns {Function} - 可取消的防抖函数
+ */
+export const createCancelableDebounce = (fn, wait = 500) => {
+  let task = null
+
+  const debouncedFn = debounce((...args) => {
+    const newTaskPromise = new Promise(async (resolve, reject) => {
+      try {
+        const result = await fn(...args)
+        resolve(result)
+      } catch (error) {
+        reject(error)
+      }
+    })
+
+    task = newTaskPromise
+    return newTaskPromise
+  }, wait)
+
+  const cancelableDebounceFn = (...args) => {
+    if (task) {
+      debouncedFn.cancel() // 取消任务
+    }
+
+    return debouncedFn(...args)
+  }
+
+  return cancelableDebounceFn
 }

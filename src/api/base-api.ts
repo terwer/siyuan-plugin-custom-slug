@@ -23,8 +23,8 @@
  * questions.
  */
 
-import { createLogger } from "../utils/simple-logger"
 import { isDev, siyuanApiToken, siyuanApiUrl } from "../Constants"
+import { simpleLogger } from "zhi-lib-base"
 
 /**
  * 思源 API 返回类型
@@ -50,7 +50,7 @@ export class BaseApi {
   private logger
 
   constructor() {
-    this.logger = createLogger("base-api")
+    this.logger = simpleLogger("base-api", "custom-slug", isDev)
   }
 
   /**

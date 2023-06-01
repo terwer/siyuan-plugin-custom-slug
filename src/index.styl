@@ -33,3 +33,21 @@
   margin-right 10px
   margin-top 0
 }
+
+.protyle:not(.fn__none) .protyle-title .protyle-attr.loading {
+  color: var(--loading-color);
+  box-shadow: 0 0 10px 0 var(--loading-color);
+  padding: 2px 4px;
+  border-radius: 5px;
+  background-color: transparent;
+  border-color: transparent;
+}
+
+[data-theme-mode="light"] .protyle:not(.fn__none) .protyle-title .protyle-attr.loading {
+  --loading-color: #5293cd;
+}
+
+[data-theme-mode="dark"] .protyle:not(.fn__none) .protyle-title .protyle-attr.loading {
+  --loading-color: #f7bfc9;
+}
+

@@ -43,7 +43,6 @@ export class AttrService {
         return flag
       }
 
-      showMessage(`${pluginInstance.i18n.tipsSlugGenerating}...`, 1000, "info")
       const pageData = await pluginInstance.kernelApi.getBlockByID(pageId)
       if (pageData.code !== 0 || (pageData.data as any).length == 0) {
         showMessage(`${pluginInstance.i18n.tipsPageInfoError}`)

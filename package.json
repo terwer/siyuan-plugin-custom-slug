@@ -20,6 +20,7 @@
     "@sveltejs/vite-plugin-svelte": "^2.0.3",
     "@terwer/eslint-config-custom": "^1.2.0",
     "@tsconfig/svelte": "^4.0.1",
+    "@types/lodash.debounce": "^4.0.7",
     "@types/node": "^20.2.0",
     "fast-glob": "^3.2.12",
     "glob": "^7.2.3",
@@ -35,7 +36,10 @@
     "vite-plugin-zip-pack": "^1.0.5"
   },
   "dependencies": {
+    "lodash": "^4.17.21",
+    "lodash.debounce": "^4.0.8",
     "shorthash2": "^1.0.3",
-    "transliteration": "^2.3.5"
+    "transliteration": "^2.3.5",
+    "zhi-lib-base": "^0.0.2"
   }
 }

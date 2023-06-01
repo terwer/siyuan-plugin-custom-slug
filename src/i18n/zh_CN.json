@@ -17,5 +17,6 @@
   "tipsSlugGenerating": "自动生成别名中，请稍后",
   "tipsPageInfoError": "页面信息获取失败",
   "tipsSlugGenerateError": "别名生成失败，可能是未打开文档！详细错误信息",
-  "tipsAttrsFetchError": "属性获取失败"
+  "tipsAttrsFetchError": "属性获取失败",
+  "tipsLoading": "呜啦啦，小天使正在努力为您取名字哟，稍安勿躁..."
 }
