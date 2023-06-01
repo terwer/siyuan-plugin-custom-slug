@@ -40,7 +40,7 @@ I heard give me a new name, it will be easier for you to find me ☺️
 
 ## Changelog
 
-**v0.0.3 major update**
+**v0.1.0 major update**
 
 ### Features
 - Provide friendly error prompts ([16fa881](https://github.com/terwer/siyuan-plugin-custom-slug/commit/16fa881e4f5da189caba014136f31e54388449dc))

@@ -1,8 +1,12 @@
 <!-- insertion marker -->
 <a name="v0.0.3"></a>
 
-## [v0.0.3](https://github.com/terwer/siyuan-plugin-custom-slug/compare/v0.0.2...v0.0.3) (2023-06-01)
+## [0.1.0](https://github.com/terwer/siyuan-plugin-custom-slug/compare/v0.0.3...v0.1.0) (2023-06-01)
 ### Features
+* 刚刚闹了个乌龙，重新打包一次 ([6c4d62b](https://github.com/terwer/siyuan-plugin-custom-slug/commit/6c4d62bb00e34f3e568bb789bb70aefc75af939f))
+* 提供友好的错误提示 ([3358ff0](https://github.com/terwer/siyuan-plugin-custom-slug/commit/3358ff049125fb6bea01191896cc83f03e22db55))
+* 支持重命名文档标题的时候自动生成别名 ([b3ceab4](https://github.com/terwer/siyuan-plugin-custom-slug/commit/b3ceab4e7dcba0a8df5103abc4a838943e824279))
+## [v0.0.3](https://github.com/terwer/siyuan-plugin-custom-slug/compare/v0.0.2...v0.0.3) (2023-06-01)
 - 提供友好的错误提示 ([16fa881](https://github.com/terwer/siyuan-plugin-custom-slug/commit/16fa881e4f5da189caba014136f31e54388449dc))
 - 支持重命名文档标题的时候自动生成别名 ([b3ceab4](https://github.com/terwer/siyuan-plugin-custom-slug/commit/b3ceab4e7dcba0a8df5103abc4a838943e824279))
 ### Chore
