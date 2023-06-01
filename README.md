@@ -26,7 +26,7 @@ I heard give me a new name, it will be easier for you to find me ☺️
 
 * Q2: Can it be automatically generated when creating a new document?
 
-  A2: Yes. v0.0.3 supports automatic generation when renaming the title. Of course, you can also click the button on the top bar to generate.
+  A2: Yes. v0.1.0 supports automatic generation when renaming the title. Of course, you can also click the button on the top bar to generate.
 
 * Q3: Why can't the automatically generated key be changed?
 
