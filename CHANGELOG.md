@@ -1,6 +1,13 @@
 <!-- insertion marker -->
 <a name="v0.0.3"></a>
 
+## [0.1.1](https://github.com/terwer/siyuan-plugin-custom-slug/compare/v0.1.0...v0.1.1) (2023-06-01)
+
+
+### Miscellaneous
+
+* add pnpm-lock.yaml for ci ([1637395](https://github.com/terwer/siyuan-plugin-custom-slug/commit/163739536f579964a31eb83877b264d2f5550fe1))
+
 ## [0.1.0](https://github.com/terwer/siyuan-plugin-custom-slug/compare/v0.0.3...v0.1.0) (2023-06-01)
 ### Features
 * 刚刚闹了个乌龙，重新打包一次 ([6c4d62b](https://github.com/terwer/siyuan-plugin-custom-slug/commit/6c4d62bb00e34f3e568bb789bb70aefc75af939f))
