@@ -46,13 +46,13 @@ export async function initTopbar(pluginInstance: SlugPlugin) {
   })
 
   topBarElement.addEventListener("click", async () => {
-    showMessage(`${pluginInstance.i18n.tipsSlugGenerating}...`, 1000, "info")
+    pluginInstance.showLoading()
     const result = await AttrService.autoGenerateAttrs(pluginInstance)
     if (!result) {
+      pluginInstance.showError()
       return
     }
-
-    showMessage(`${pluginInstance.i18n.makeSlugOk}`, 2000, "info")
+    pluginInstance.showSuccess()
   })
 
   // 添加右键菜单

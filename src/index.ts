@@ -64,6 +64,7 @@ export default class SlugPlugin extends Plugin {
     const handleRenameEvent = createCancelableDebounce(async () => {
       const result = await AttrService.autoGenerateAttrs(this)
       if (!result) {
+        this.showError()
         return
       }
       this.showSuccess()
@@ -90,14 +91,20 @@ export default class SlugPlugin extends Plugin {
   //////////////////////////////////////////////////////////////////
   // private function
   //////////////////////////////////////////////////////////////////
-  private showLoading() {
+  public showLoading() {
     document.querySelector(".protyle:not(.fn__none) .protyle-title .protyle-attr").classList.add("loading")
     document.querySelector(".protyle:not(.fn__none) .protyle-title .protyle-attr.loading").innerHTML =
       this.i18n.tipsLoading
     // showMessage(`${this.i18n.tipsSlugGenerating}...`, 1000, "info")
   }
 
-  private showSuccess() {
+  public showError() {
+    document.querySelector(".protyle:not(.fn__none) .protyle-title .protyle-attr.loading").innerHTML =
+      this.i18n.tipsLoadingError
+    // showMessage(`${this.i18n.makeSlugOk}`, 2000, "info")
+  }
+
+  public showSuccess() {
     document.querySelector(".protyle:not(.fn__none) .protyle-title .protyle-attr").classList.remove("loading")
     // showMessage(`${this.i18n.makeSlugOk}`, 2000, "info")
   }

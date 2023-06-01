@@ -18,5 +18,6 @@
   "tipsPageInfoError": "Failed to obtain page information",
   "tipsSlugGenerateError": "Alias generation failed, possibly because the document is not open! detailed error message",
   "tipsAttrsFetchError": "Attribute acquisition failed",
-  "tipsLoading": "Trying to load, please wait..."
+  "tipsLoading": "Trying to load, please wait...",
+  "tipsLoadingError": "Ahh, there is something wrong, please give feedback to the developer terwer~"
 }
