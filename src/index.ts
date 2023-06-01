@@ -23,7 +23,7 @@
  * questions.
  */
 
-import { App, getFrontend, IObject, Plugin, showMessage } from "siyuan"
+import { App, getFrontend, IObject, Plugin } from "siyuan"
 import { initTopbar } from "./topbar"
 import KernelApi from "./api/kernel-api"
 import { simpleLogger } from "zhi-lib-base"
