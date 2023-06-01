@@ -41,7 +41,7 @@
 
 ## 更新历史
 
-**v0.0.3 主要更新**
+**v0.1.0 主要更新**
 
 ### 特性
 - 提供友好的错误提示 ([16fa881](https://github.com/terwer/siyuan-plugin-custom-slug/commit/16fa881e4f5da189caba014136f31e54388449dc))
