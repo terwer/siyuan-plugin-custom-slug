@@ -1,6 +1,6 @@
 {
   "name": "siyuan-plugin-custom-slug",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "type": "module",
   "description": "I heard give me a new name, it will be easier for you to find me",
   "repository": "terwer/siyuan-plugin-custom-slug",
@@ -8,13 +8,15 @@
   "author": "terwer",
   "license": "GPL-3.0",
   "scripts": {
-    "makeLink": "node  --no-warnings ./scripts/make_dev_link.js",
-    "makeLog": "source scripts/venv/bin/activate && git-changelog -c angular --sections feat,fix,refactor,chore,docs -t angular -T -o CHANGELOG.md",
+    "serve": "vite",
     "dev": "vite build --watch",
     "build": "vite build",
+    "start": "vite preview",
+    "test": "vitest --watch",
     "syncVersion": "python scripts/version.py",
     "parseChangelog": "python scripts/parse_changelog.py",
-    "prepareRelease": "pnpm syncVersion && pnpm makeLog && pnpm parseChangelog"
+    "prepareRelease": "pnpm syncVersion && pnpm parseChangelog",
+    "package": "python scripts/package.py"
   },
   "devDependencies": {
     "@sveltejs/vite-plugin-svelte": "^2.0.3",

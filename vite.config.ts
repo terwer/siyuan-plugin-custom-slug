@@ -4,12 +4,15 @@ import minimist from "minimist"
 import { viteStaticCopy } from "vite-plugin-static-copy"
 import livereload from "rollup-plugin-livereload"
 import { svelte } from "@sveltejs/vite-plugin-svelte"
-import zipPack from "vite-plugin-zip-pack"
 import fg from "fast-glob"
 
 const args = minimist(process.argv.slice(2))
 const isWatch = args.watch || args.w || false
-const devDistDir = "./dev"
+const isWindows = process.platform === "win32"
+let devDistDir = "/Users/terwer/Documents/mydocs/SiYuanWorkspace/public/data/plugins/siyuan-plugin-custom-slug"
+if (isWindows) {
+  devDistDir = "C:\\Users\\terwer\\Documents\\mydocs\\SiyuanWorkspace\\public\\data\\plugins\\siyuan-plugin-custom-slug"
+}
 const distDir = isWatch ? devDistDir : "./dist"
 
 console.log("isWatch=>", isWatch)
@@ -90,13 +93,7 @@ export default defineConfig({
                 },
               },
             ]
-          : [
-              zipPack({
-                inDir: "./dist",
-                outDir: "./",
-                outFileName: "package.zip",
-              }),
-            ]),
+          : []),
       ],
 
       // make sure to externalize deps that shouldn't be bundled
