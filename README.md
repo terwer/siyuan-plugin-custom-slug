@@ -26,7 +26,7 @@ I heard give me a new name, it will be easier for you to find me ☺️
 
 * Q2: Can it be automatically generated when creating a new document?
 
-  A2: This cannot be done temporarily. Moreover, there may be users who don't want to generate every document. So provide the top bar button, click to generate automatically.
+  A2: Yes. v0.0.3 supports automatic generation when renaming the title. Of course, you can also click the button on the top bar to generate.
 
 * Q3: Why can't the automatically generated key be changed?
 
@@ -39,6 +39,12 @@ I heard give me a new name, it will be easier for you to find me ☺️
   ![](./assets/slug-setting.png)
 
 ## Changelog
+
+**v0.0.3 major update**
+
+### Features
+- Provide friendly error prompts ([16fa881](https://github.com/terwer/siyuan-plugin-custom-slug/commit/16fa881e4f5da189caba014136f31e54388449dc))
+- Support automatically generating aliases when renaming document titles ([b3ceab4](https://github.com/terwer/siyuan-plugin-custom-slug/commit/b3ceab4e7dcba0a8df5103abc4a838943e824279))
 
 **v0.0.2 major update**
 

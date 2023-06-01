@@ -27,7 +27,7 @@
 
 * Q2：新建文档时候能自动生成吗？
 
-  A2：这个暂时做不到。而且，或许也有用户不想每篇文档都生成呢。所以提供顶栏按钮，点击自动生成。
+  A2：支持。v0.0.3 支持重命名标题的时候自动生成。当然您也可以点击顶栏按钮生成。
 
 * Q3：自动生成的 key 为什么不能改？
 
@@ -40,6 +40,12 @@
   ![](./assets/slug-setting.png)
 
 ## 更新历史
+
+**v0.0.3 主要更新**
+
+### 特性
+- 提供友好的错误提示 ([16fa881](https://github.com/terwer/siyuan-plugin-custom-slug/commit/16fa881e4f5da189caba014136f31e54388449dc))
+- 支持重命名文档标题的时候自动生成别名 ([b3ceab4](https://github.com/terwer/siyuan-plugin-custom-slug/commit/b3ceab4e7dcba0a8df5103abc4a838943e824279))
 
 **v0.0.2 主要更新**
 
