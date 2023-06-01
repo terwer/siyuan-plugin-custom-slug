@@ -23,7 +23,7 @@
  * questions.
  */
 
-import { App, getFrontend, IObject, Plugin } from "siyuan"
+import { App, getFrontend, IObject, Plugin, showMessage } from "siyuan"
 import { initTopbar } from "./topbar"
 import KernelApi from "./api/kernel-api"
 import { simpleLogger } from "zhi-lib-base"
@@ -92,20 +92,29 @@ export default class SlugPlugin extends Plugin {
   // private function
   //////////////////////////////////////////////////////////////////
   public showLoading() {
-    document.querySelector(".protyle:not(.fn__none) .protyle-title .protyle-attr").classList.add("loading")
-    document.querySelector(".protyle:not(.fn__none) .protyle-title .protyle-attr.loading").innerHTML =
-      this.i18n.tipsLoading
-    // showMessage(`${this.i18n.tipsSlugGenerating}...`, 1000, "info")
+    try {
+      document.querySelector(".protyle:not(.fn__none) .protyle-title .protyle-attr").classList.add("loading")
+      document.querySelector(".protyle:not(.fn__none) .protyle-title .protyle-attr.loading").innerHTML =
+        this.i18n.tipsLoading
+    } catch (e) {
+      // showMessage(`${this.i18n.tipsLoadingError} => ${e.toString()}`, 2000, "error")
+    }
   }
 
   public showError() {
-    document.querySelector(".protyle:not(.fn__none) .protyle-title .protyle-attr.loading").innerHTML =
-      this.i18n.tipsLoadingError
-    // showMessage(`${this.i18n.makeSlugOk}`, 2000, "info")
+    try {
+      document.querySelector(".protyle:not(.fn__none) .protyle-title .protyle-attr.loading").innerHTML =
+        this.i18n.tipsLoadingError
+    } catch (e) {
+      showMessage(`${this.i18n.tipsLoadingError} => ${e.toString()}`, 2000, "error")
+    }
   }
 
   public showSuccess() {
-    document.querySelector(".protyle:not(.fn__none) .protyle-title .protyle-attr").classList.remove("loading")
-    // showMessage(`${this.i18n.makeSlugOk}`, 2000, "info")
+    try {
+      document.querySelector(".protyle:not(.fn__none) .protyle-title .protyle-attr").classList.remove("loading")
+    } catch (e) {
+      showMessage(`${this.i18n.tipsLoadingError} => ${e.toString()}`, 2000, "error")
+    }
   }
 }
