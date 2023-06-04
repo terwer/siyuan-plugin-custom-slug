@@ -88,9 +88,9 @@ export default class SlugPlugin extends Plugin {
     this.logger.info("eventBus ws-main destroyed")
   }
 
-  //////////////////////////////////////////////////////////////////
+  //================================================================
   // private function
-  //////////////////////////////////////////////////////////////////
+  //================================================================
   public showLoading() {
     try {
       document.querySelector(".protyle:not(.fn__none) .protyle-title .protyle-attr").classList.add("loading")
