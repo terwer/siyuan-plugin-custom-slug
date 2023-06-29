@@ -40,6 +40,14 @@ I heard give me a new name, it will be easier for you to find me ☺️
 
 ## Changelog
 
+**v0.2.0 Major Update**
+
+- #25 Docker compatible
+- Support for disabling aliases
+- Support to remove pinyin-
+- Support clearing naming
+- Upgrade dependencies
+
 **v0.1.0 major update**
 
 ### Features
