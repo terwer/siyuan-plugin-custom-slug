@@ -6,6 +6,7 @@
 
 ### Features
 
+* [#25](https://github.com/terwer/siyuan-plugin-custom-slug/issues/25) 兼容 docker ([848b56e](https://github.com/terwer/siyuan-plugin-custom-slug/commit/848b56e85bd3768f0e99c7e911067079b9230b28))
 * 体验优化，支持禁用别名，支持去除拼音-，支持清空命名 ([e819d4b](https://github.com/terwer/siyuan-plugin-custom-slug/commit/e819d4b93aa886b8a10ae7fa374695349e0525aa))
 
 
