@@ -68,8 +68,8 @@ devDependencies:
     specifier: ^4.3.9
     version: 4.3.9(@types/node@20.2.5)(stylus@0.59.0)
   vite-plugin-static-copy:
-    specifier: ^0.15.0
-    version: 0.15.0(vite@4.3.9)
+    specifier: ^0.16.0
+    version: 0.16.0(vite@4.3.9)
   vite-plugin-zip-pack:
     specifier: ^1.0.5
     version: 1.0.5(vite@4.3.9)
@@ -2435,8 +2435,8 @@ packages:
     resolution: {integrity: sha512-wa7YjyUGfNZngI/vtK0UHAN+lgDCxBPCylVXGp0zu59Fz5aiGtNXaq3DhIov063MorB+VfufLh3JlF2KdTK3xg==}
     dev: true
 
-  /vite-plugin-static-copy@0.15.0(vite@4.3.9):
-    resolution: {integrity: sha512-Ww+/Ug9guV45oIfIi/lA2z8v3K+lLHV9zCJqTVO4FTdqrJoZBj68VgGBSH1fi0N4q/EHW32RsL3ympi4Wlsq5w==}
+  /vite-plugin-static-copy@0.16.0(vite@4.3.9):
+    resolution: {integrity: sha512-dMVEg5Z2SwYRgQnHZaeokvSKB4p/TOTf65JU4sP3U6ccSBsukqdtDOjpmT+xzTFHAA8WJjcS31RMLjUdWQCBzw==}
     engines: {node: ^14.18.0 || >=16.0.0}
     peerDependencies:
       vite: ^3.0.0 || ^4.0.0
