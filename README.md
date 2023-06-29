@@ -40,6 +40,10 @@ I heard give me a new name, it will be easier for you to find me ☺️
 
 ## Changelog
 
+**v0.3.0 主要更新**
+
+- Both batch and incremental builds are supported
+
 **v0.2.0 Major Update**
 
 - #25 Docker compatible
