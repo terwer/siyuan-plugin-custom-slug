@@ -31,19 +31,38 @@ import shortHash from "shorthash2"
 import { ConfigManager } from "../store/config"
 
 /**
- * 属性保存
+ * AttrService类提供了自动生成和保存属性的方法
  */
 export class AttrService {
+  /**
+   * 自动为给定的插件实例生成属性
+   *
+   * @param pluginInstance SlugPlugin的实例
+   * @returns 返回一个布尔值，表示是否成功生成属性
+   */
   public static async autoGenerateAttrs(pluginInstance: SlugPlugin) {
     let flag = true
-    try {
-      const pageId = PageUtil.getPageId()
-      if (!pageId) {
-        showMessage(`${pluginInstance.i18n.tipsErrOpenDoc}`, 7000, "error")
-        flag = false
-        return flag
-      }
 
+    const pageId = PageUtil.getPageId()
+    if (!pageId) {
+      showMessage(`${pluginInstance.i18n.tipsErrOpenDoc}`, 7000, "error")
+      flag = false
+      return flag
+    }
+
+    return this.doGenerateAttrsById(pluginInstance, pageId)
+  }
+
+  /**
+   * 根据给定的页面ID为插件实例生成属性
+   *
+   * @param pluginInstance SlugPlugin的实例
+   * @param pageId 页面的ID
+   * @returns 返回一个布尔值，表示是否成功生成属性
+   */
+  public static async doGenerateAttrsById(pluginInstance: SlugPlugin, pageId: string) {
+    let flag = true
+    try {
       // 读取配置
       const settingConfig = (await ConfigManager.loadConfig(pluginInstance)) as any
 
@@ -83,6 +102,15 @@ export class AttrService {
     return flag
   }
 
+  /**
+   * 保存给定的属性
+   *
+   * @param pluginInstance SlugPlugin的实例
+   * @param attName 属性名
+   * @param attAlias 属性别名
+   * @param nameSwitch 名称开关
+   * @param clearName 清除名称
+   */
   public static async doSaveAttrs(
     pluginInstance: SlugPlugin,
     attName: string,
