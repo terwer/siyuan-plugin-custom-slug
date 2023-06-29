@@ -7,10 +7,12 @@
   "backends": [
     "windows",
     "linux",
-    "darwin"
+    "darwin",
+    "docker"
   ],
   "frontends": [
-    "desktop"
+    "desktop",
+    "browser-desktop"
   ],
   "displayName": {
     "en_US": "Document Slug",
