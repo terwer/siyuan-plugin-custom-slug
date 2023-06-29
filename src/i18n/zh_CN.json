@@ -19,5 +19,13 @@
   "tipsSlugGenerateError": "别名生成失败，可能是未打开文档！详细错误信息",
   "tipsAttrsFetchError": "属性获取失败",
   "tipsLoading": "呜啦啦，小天使正在努力为您取名字哟，稍安勿躁...",
-  "tipsLoadingError": "啊噢，出故障了呢，给开发者 terwer 反馈一下吧~"
+  "tipsLoadingError": "啊噢，出故障了呢，给开发者 terwer 反馈一下吧~",
+  "setting": "设置",
+  "nameSwitch": "禁用命名",
+  "nameSwitchTips": "如果不想生成命名，可使用此选项禁用，不影响别名",
+  "settingConfigSaveSuccess": "配置保存成功",
+  "removePinyinSplitSwitch": "去除拼音别名-",
+  "removePinyinSplitSwitchTips": "完整拼音之间不加-，方便搜索",
+  "clearName": "清空命名",
+  "clearNameTips": "注意：开启之后，会将命名清空，仅用于修复，如果你自己改过，请关闭此选项"
 }

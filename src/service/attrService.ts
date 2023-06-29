@@ -28,6 +28,7 @@ import { showMessage } from "siyuan"
 import SlugPlugin from "../index"
 import { getFirstLetters, pinyinSlugify, removeTitleNumber, zhSlugify } from "../utils/utils"
 import shortHash from "shorthash2"
+import { ConfigManager } from "../store/config"
 
 /**
  * 属性保存
@@ -43,6 +44,9 @@ export class AttrService {
         return flag
       }
 
+      // 读取配置
+      const settingConfig = (await ConfigManager.loadConfig(pluginInstance)) as any
+
       const pageData = await pluginInstance.kernelApi.getBlockByID(pageId)
       if (pageData.code !== 0 || (pageData.data as any).length == 0) {
         showMessage(`${pluginInstance.i18n.tipsPageInfoError}`)
@@ -50,7 +54,7 @@ export class AttrService {
         return flag
       }
       const page = pageData.data[0] as any
-      pluginInstance.logger.info("page=>", page)
+      pluginInstance.logger.debug("page=>", page)
 
       const title = removeTitleNumber(page.content).trim()
 
@@ -64,13 +68,14 @@ export class AttrService {
       const slug = slugTitle + hashstr
       const pinyin = pinyinTitle + hashstr
       const pinyinInitials = pinyinInitialsTitle + hashstr
-      pluginInstance.logger.info("slug=>", slug)
-      pluginInstance.logger.info("pinyin=>", pinyin)
-      pluginInstance.logger.info("pinyinInitials=>", pinyinInitials)
+
+      const nameSwitch = settingConfig?.nameSwitch ?? false
+      const clearName = settingConfig?.clearName ?? false
+      const removePinyinSplit = settingConfig?.removePinyinSplit ?? false
 
       const attName = slug
-      const attAlias = [pinyin, pinyinInitials].join()
-      await this.doSaveAttrs(pluginInstance, attName, attAlias)
+      const attAlias = [removePinyinSplit ? pinyin.replace(/-/g, "") : pinyin, pinyinInitials].join()
+      await this.doSaveAttrs(pluginInstance, attName, attAlias, nameSwitch, clearName)
     } catch (e) {
       showMessage(`${pluginInstance.i18n.tipsSlugGenerateError} => ${e.toString()}`, 7000, "error")
       flag = false
@@ -78,13 +83,39 @@ export class AttrService {
     return flag
   }
 
-  public static async doSaveAttrs(pluginInstance: SlugPlugin, attName: string, attAlias: string) {
+  public static async doSaveAttrs(
+    pluginInstance: SlugPlugin,
+    attName: string,
+    attAlias: string,
+    nameSwitch: boolean,
+    clearName: boolean
+  ) {
     const pageId = PageUtil.getPageId()
-    const customAttrs = {
-      name: attName,
+    let customAttrs = {
       alias: attAlias,
       "custom-slug": attName,
     }
+
+    // 未禁用命名
+    if (!nameSwitch) {
+      customAttrs = {
+        ...customAttrs,
+        ...{
+          name: attName,
+        },
+      }
+    }
+
+    // 强制清空
+    if (clearName) {
+      customAttrs = {
+        ...customAttrs,
+        ...{
+          name: "",
+        },
+      }
+    }
+
     const data = await pluginInstance.kernelApi.setBlockAttrs(pageId, customAttrs)
     if (data.code !== 0) {
       showMessage(`${pluginInstance.i18n.tipsAttrsFetchError} => ${data.msg}`, 7000, "error")

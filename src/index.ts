@@ -24,7 +24,7 @@
  */
 
 import { App, getFrontend, IObject, Plugin, showMessage } from "siyuan"
-import { initTopbar } from "./topbar"
+import { initTopbar, showSettingMenu } from "./topbar"
 import KernelApi from "./api/kernel-api"
 import { simpleLogger } from "zhi-lib-base"
 import { isDev } from "./Constants"
@@ -86,6 +86,10 @@ export default class SlugPlugin extends Plugin {
   onunload() {
     this.eventBus.off("ws-main", this.renameEvent)
     this.logger.info("eventBus ws-main destroyed")
+  }
+
+  openSetting() {
+    showSettingMenu(this)
   }
 
   //================================================================
