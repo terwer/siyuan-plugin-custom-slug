@@ -28,6 +28,7 @@ import { iconSlug } from "./utils/svg"
 import { Dialog, Menu, showMessage } from "siyuan"
 import ShowSlug from "./libs/ShowSlug.svelte"
 import { AttrService } from "./service/attrService"
+import SlugSetting from "./libs/SlugSetting.svelte"
 
 /**
  * 顶栏按钮
@@ -70,7 +71,6 @@ const initContextMenu = async (pluginInstance: SlugPlugin, rect: DOMRect) => {
   const menu = new Menu("slugContextMenu")
 
   // 查看自定义别名
-  menu.addSeparator()
   menu.addItem({
     iconHTML: iconSlug.iconView,
     label: pluginInstance.i18n.viewSlug,
@@ -91,6 +91,15 @@ const initContextMenu = async (pluginInstance: SlugPlugin, rect: DOMRect) => {
     },
   })
 
+  menu.addSeparator()
+  menu.addItem({
+    iconHTML: iconSlug.iconSetting,
+    label: pluginInstance.i18n.setting,
+    click: () => {
+      showSettingMenu(pluginInstance)
+    },
+  })
+
   if (pluginInstance.isMobile) {
     menu.fullscreen()
   } else {
@@ -100,4 +109,20 @@ const initContextMenu = async (pluginInstance: SlugPlugin, rect: DOMRect) => {
       isLeft: true,
     })
   }
+}
+
+export const showSettingMenu = (pluginInstance: SlugPlugin) => {
+  const settingId = "siyuan-custom-slug-setting"
+  const d = new Dialog({
+    title: `${pluginInstance.i18n.setting} - ${pluginInstance.i18n.slug}`,
+    content: `<div id="${settingId}"></div>`,
+    width: pluginInstance.isMobile ? "92vw" : "720px",
+  })
+  new SlugSetting({
+    target: document.getElementById(settingId) as HTMLElement,
+    props: {
+      pluginInstance: pluginInstance,
+      dialog: d,
+    },
+  })
 }

@@ -19,5 +19,13 @@
   "tipsSlugGenerateError": "Alias generation failed, possibly because the document is not open! detailed error message",
   "tipsAttrsFetchError": "Attribute acquisition failed",
   "tipsLoading": "Trying to load, please wait...",
-  "tipsLoadingError": "Ahh, there is something wrong, please give feedback to the developer terwer~"
+  "tipsLoadingError": "Ahh, there is something wrong, please give feedback to the developer terwer~",
+  "setting": "Setting",
+  "nameSwitch": "Disable naming",
+  "nameSwitchTips": "If you don't want to generate naming, you can use this option to disable it without affecting the alias",
+  "settingConfigSaveSuccess": "The configuration is saved successfully",
+  "removePinyinSplitSwitch": "Remove Pinyin aliases-",
+  "removePinyinSplitSwitchTips": "Complete pinyin without adding - for easy search",
+  "clearName": "Clear name",
+  "clearNameTips": "Note: After opening, the naming will be cleared for repair only. If you have made changes yourself, please turn off this option"
 }
