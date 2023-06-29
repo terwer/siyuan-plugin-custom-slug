@@ -27,5 +27,8 @@
   "removePinyinSplitSwitch": "Remove Pinyin aliases-",
   "removePinyinSplitSwitchTips": "Complete pinyin without adding - for easy search",
   "clearName": "Clear name",
-  "clearNameTips": "Note: After opening, the naming will be cleared for repair only. If you have made changes yourself, please turn off this option"
+  "clearNameTips": "Note: After opening, the naming will be cleared for repair only. If you have made changes yourself, please turn off this option",
+  "batchMakeSlug": "Generate aliases in bulk",
+  "batchTipTitle": "Kind tips",
+  "batchTipDescription": "No alias has been detected for [docCount] documents, upload update time [lastUpdated] , do you want to continue?"
 }

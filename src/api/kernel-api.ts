@@ -65,16 +65,38 @@ class KernelApi extends BaseApi {
     return await this.sql(stmt)
   }
 
-  /**
-   * 以sql发送请求
-   * @param sql sql
-   */
-  public async sql(sql: string): Promise<SiyuanData> {
-    const sqldata = {
-      stmt: sql,
+  public async getUnnamedRootBlocksCount(updated: string): Promise<number> {
+    let updateWhere = ""
+    if (updated !== "") {
+      updateWhere = `and b1.updated >= '${updated}'`
     }
-    const url = "/api/query/sql"
-    return await this.siyuanRequest(url, sqldata)
+    const stmt = `SELECT COUNT(DISTINCT b1.root_id) as count
+      FROM blocks b1
+      WHERE 1 = 1 
+      and not exists (select root_id from attributes where name='custom-slug' and value <> '' and root_id=b1.root_id)
+      ${updateWhere}
+      ORDER BY b1.updated DESC`
+    const data = (await this.sql(stmt)).data as any[]
+    return data[0].count
+  }
+
+  public async getUnnamedRootBlockIds(updated: string, offset = 0): Promise<any> {
+    let updateWhere = ""
+    if (updated !== "") {
+      updateWhere = `and b1.updated >= '${updated}'`
+    }
+    const stmt = `select DISTINCT b2.root_id from blocks b2
+        WHERE 1==1
+        AND b2.id IN (
+             SELECT DISTINCT b1.root_id
+                FROM blocks b1
+                WHERE 1 = 1 
+                and not exists (select root_id from attributes where name='custom-slug' and value <> '' and root_id=b1.root_id)
+                ${updateWhere}
+                ORDER BY b1.updated DESC
+        )
+        ORDER BY b2.updated DESC,b2.created DESC LIMIT ${offset}, 10`
+    return await this.sql(stmt)
   }
 }
 
