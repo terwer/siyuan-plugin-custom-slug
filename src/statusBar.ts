@@ -23,43 +23,20 @@
  * questions.
  */
 
-// 图标
-// 建议使用 iconfont ，可以调色，可以调整大小
-// https://fontawesome.com/search?q=yuque&o=r&m=free
-// https://www.iconfont.cn/search/index?searchType=icon&q=cnblogs&page=1&tag=&fromCollection=1&fills=
-.sl-icon{
-  width 12px
-  height 12px
-  margin-right 10px
-  margin-top 0
+import SlugPlugin from "./index"
+
+export const initStatusBar = (pluginInstance: SlugPlugin) => {
+  const statusBarTemplate = document.createElement("template")
+  statusBarTemplate.innerHTML = `<div class="toolbar__item b3-tooltips b3-tooltips__w" aria-label="generate slug status" style="font-size: 12px;"></div>`
+  statusBarTemplate.content.firstElementChild.addEventListener("click", () => {})
+
+  pluginInstance.statusBarElement = pluginInstance.addStatusBar({
+    element: statusBarTemplate.content.firstElementChild as HTMLElement,
+    position: "left",
+  })
 }
 
-.font-awesome-icon
-  width 12px
-  height 12px
-  margin-right 10px
-  margin-top 3px
-
-.iconfont-icon
-  width 12px
-  height 12px
-  margin-right 10px
-  margin-top 2px
-
-.protyle:not(.fn__none) .protyle-title .protyle-attr.loading {
-  color: var(--loading-color);
-  box-shadow: 0 0 10px 0 var(--loading-color);
-  padding: 2px 4px;
-  border-radius: 5px;
-  background-color: transparent;
-  border-color: transparent;
+export const updateStatusBar = (pluginInstance: SlugPlugin, statusText) => {
+  console.log(pluginInstance.statusBarElement)
+  pluginInstance.statusBarElement.innerHTML = `<div class="toolbar__item b3-tooltips b3-tooltips__w" aria-label="generate slug status" style="font-size: 12px;">${statusText}</div>`
 }
-
-[data-theme-mode="light"] .protyle:not(.fn__none) .protyle-title .protyle-attr.loading {
-  --loading-color: #5293cd;
-}
-
-[data-theme-mode="dark"] .protyle:not(.fn__none) .protyle-title .protyle-attr.loading {
-  --loading-color: #f7bfc9;
-}
-

@@ -24,26 +24,99 @@
  */
 
 import PageUtil from "../utils/pageUtil"
-import { showMessage } from "siyuan"
+import { confirm, showMessage } from "siyuan"
 import SlugPlugin from "../index"
-import { getFirstLetters, pinyinSlugify, removeTitleNumber, zhSlugify } from "../utils/utils"
+import { generateCurrentTime, getFirstLetters, pinyinSlugify, removeTitleNumber, zhSlugify } from "../utils/utils"
 import shortHash from "shorthash2"
 import { ConfigManager } from "../store/config"
+import { updateStatusBar } from "../statusBar"
 
 /**
- * 属性保存
+ * AttrService类提供了自动生成和保存属性的方法
  */
 export class AttrService {
+  /**
+   * 自动为给定的插件实例生成属性
+   *
+   * @param pluginInstance SlugPlugin的实例
+   * @returns 返回一个布尔值，表示是否成功生成属性
+   */
   public static async autoGenerateAttrs(pluginInstance: SlugPlugin) {
     let flag = true
-    try {
-      const pageId = PageUtil.getPageId()
-      if (!pageId) {
-        showMessage(`${pluginInstance.i18n.tipsErrOpenDoc}`, 7000, "error")
-        flag = false
-        return flag
-      }
 
+    const pageId = PageUtil.getPageId()
+    if (!pageId) {
+      showMessage(`${pluginInstance.i18n.tipsErrOpenDoc}`, 7000, "error")
+      flag = false
+      return flag
+    }
+
+    return this.doGenerateAttrsById(pluginInstance, pageId)
+  }
+
+  public static async batchGenerateAttrs(pluginInstance: SlugPlugin) {
+    const settingConfig = (await ConfigManager.loadConfig(pluginInstance)) as any
+    const lastUpdated = settingConfig?.lastUpdated ?? ""
+
+    try {
+      const unnamedCount = await pluginInstance.kernelApi.getUnnamedRootBlocksCount(lastUpdated)
+      if (unnamedCount === 0) {
+        showMessage("没有需要处理的文档", 3000, "info")
+        return
+      }
+      const desc = pluginInstance.i18n.batchTipDescription
+        .replace("[docCount]", unnamedCount)
+        .replace("[lastUpdated]", lastUpdated === "" ? "-" : lastUpdated)
+      confirm(pluginInstance.i18n.batchTipTitle, desc, async () => {
+        const pageSize = 10
+        let currentCount = 0 // 初始化 currentCount
+        for (let offset = 0; offset < unnamedCount; offset += pageSize) {
+          const unnamedResult = await pluginInstance.kernelApi.getUnnamedRootBlockIds(lastUpdated, offset)
+          pluginInstance.logger.debug("unnamedResult=>", unnamedResult)
+          // 在这里处理每一页的结果
+          if (unnamedResult && unnamedResult.data && unnamedResult.data.length > 0) {
+            for (const pageIdResult of unnamedResult.data) {
+              const pageId = pageIdResult.root_id
+              updateStatusBar(pluginInstance, `准备为 ${pageId} 生成别名，请稍后...`)
+
+              // 对每个pageId调用doGenerateAttrsById
+              const result = await this.doGenerateAttrsById(pluginInstance, pageId)
+              if (!result) {
+                pluginInstance.logger.error(`生成别名失败，pageId: ${pageId}`)
+              } else {
+                currentCount++ // 更新 currentCount
+              }
+
+              updateStatusBar(
+                pluginInstance,
+                `文档 ${pageId} 生成别名已完成，当前第 [${offset + currentCount}/${unnamedCount}] 个`
+              )
+            }
+          }
+        }
+
+        // 处理完毕更新时间
+        const current = generateCurrentTime()
+        settingConfig.lastUpdated = current
+        await ConfigManager.saveConfig(pluginInstance, settingConfig)
+        updateStatusBar(pluginInstance, `别名生成全部完成.`)
+      })
+    } catch (e) {
+      pluginInstance.logger.error("批量生成别名失败", e)
+      showMessage("批量生成别名失败", 7000, "error")
+    }
+  }
+
+  /**
+   * 根据给定的页面ID为插件实例生成属性
+   *
+   * @param pluginInstance SlugPlugin的实例
+   * @param pageId 页面的ID
+   * @returns 返回一个布尔值，表示是否成功生成属性
+   */
+  public static async doGenerateAttrsById(pluginInstance: SlugPlugin, pageId: string) {
+    let flag = true
+    try {
       // 读取配置
       const settingConfig = (await ConfigManager.loadConfig(pluginInstance)) as any
 
@@ -75,7 +148,7 @@ export class AttrService {
 
       const attName = slug
       const attAlias = [removePinyinSplit ? pinyin.replace(/-/g, "") : pinyin, pinyinInitials].join()
-      await this.doSaveAttrs(pluginInstance, attName, attAlias, nameSwitch, clearName)
+      await this.doSaveAttrs(pluginInstance, pageId, attName, attAlias, nameSwitch, clearName)
     } catch (e) {
       showMessage(`${pluginInstance.i18n.tipsSlugGenerateError} => ${e.toString()}`, 7000, "error")
       flag = false
@@ -83,14 +156,24 @@ export class AttrService {
     return flag
   }
 
+  /**
+   * 保存给定的属性
+   *
+   * @param pluginInstance SlugPlugin的实例
+   * @param pageId 文档ID
+   * @param attName 属性名
+   * @param attAlias 属性别名
+   * @param nameSwitch 名称开关
+   * @param clearName 清除名称
+   */
   public static async doSaveAttrs(
     pluginInstance: SlugPlugin,
+    pageId: string,
     attName: string,
     attAlias: string,
     nameSwitch: boolean,
     clearName: boolean
   ) {
-    const pageId = PageUtil.getPageId()
     let customAttrs = {
       alias: attAlias,
       "custom-slug": attName,

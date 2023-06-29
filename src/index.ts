@@ -32,6 +32,7 @@ import { isDev } from "./Constants"
 import "./index.styl"
 import { createCancelableDebounce } from "./utils/utils"
 import { AttrService } from "./service/attrService"
+import { initStatusBar } from "./statusBar"
 
 /**
  * 别名插件
@@ -45,6 +46,7 @@ export default class SlugPlugin extends Plugin {
   public logger
   public kernelApi: KernelApi
   private renameEvent: any
+  public statusBarElement
 
   constructor(options: { app: App; id: string; name: string; i18n: IObject }) {
     super(options)
@@ -58,6 +60,7 @@ export default class SlugPlugin extends Plugin {
     this.isMobile = frontEnd === "mobile" || frontEnd === "browser-mobile"
 
     await initTopbar(this)
+    await initStatusBar(this)
   }
 
   onLayoutReady() {

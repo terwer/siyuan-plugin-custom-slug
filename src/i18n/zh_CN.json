@@ -27,5 +27,8 @@
   "removePinyinSplitSwitch": "去除拼音别名-",
   "removePinyinSplitSwitchTips": "完整拼音之间不加-，方便搜索",
   "clearName": "清空命名",
-  "clearNameTips": "注意：开启之后，会将命名清空，仅用于修复，如果你自己改过，请关闭此选项"
+  "clearNameTips": "注意：开启之后，会将命名清空，仅用于修复，如果你自己改过，请关闭此选项",
+  "batchMakeSlug": "批量生成别名",
+  "batchTipTitle": "温馨提示",
+  "batchTipDescription": "<span style='color:red;'>检测到 [docCount] 篇文档未生成别名，上次更新时间为 [lastUpdated] 。该操作可能耗时较长，完成之前，请勿关闭思源，尽量别进行其他操作，是否继续？</span>"
 }

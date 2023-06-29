@@ -25,7 +25,7 @@
 
 import SlugPlugin from "./index"
 import { iconSlug } from "./utils/svg"
-import { Dialog, Menu, showMessage } from "siyuan"
+import { confirm, Dialog, Menu, showMessage } from "siyuan"
 import ShowSlug from "./libs/ShowSlug.svelte"
 import { AttrService } from "./service/attrService"
 import SlugSetting from "./libs/SlugSetting.svelte"
@@ -88,6 +88,16 @@ const initContextMenu = async (pluginInstance: SlugPlugin, rect: DOMRect) => {
           dialog: d,
         },
       })
+    },
+  })
+
+  menu.addSeparator()
+  menu.addItem({
+    iconHTML: iconSlug.iconBatch,
+    label: pluginInstance.i18n.batchMakeSlug,
+    click: async () => {
+      showMessage("检测文档中，请稍后...", 5000, "info")
+      await AttrService.batchGenerateAttrs(pluginInstance)
     },
   })
 
