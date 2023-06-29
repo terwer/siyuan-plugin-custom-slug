@@ -1,6 +1,31 @@
 <!-- insertion marker -->
 <a name="v0.0.3"></a>
 
+## [0.2.0](https://github.com/terwer/siyuan-plugin-custom-slug/compare/v0.1.0...v0.2.0) (2023-06-29)
+
+
+### Features
+
+* [#25](https://github.com/terwer/siyuan-plugin-custom-slug/issues/25) 兼容 docker ([848b56e](https://github.com/terwer/siyuan-plugin-custom-slug/commit/848b56e85bd3768f0e99c7e911067079b9230b28))
+* 体验优化，支持禁用别名，支持去除拼音-，支持清空命名 ([e819d4b](https://github.com/terwer/siyuan-plugin-custom-slug/commit/e819d4b93aa886b8a10ae7fa374695349e0525aa))
+
+
+### Bug Fixes
+
+* **deps:** bump zhi-lib-base from 0.0.2 to 0.4.2 ([a9e3fc3](https://github.com/terwer/siyuan-plugin-custom-slug/commit/a9e3fc39d96b8793e2daf525b7be839b7631d4bc))
+
+
+### Miscellaneous
+
+* add pnpm-lock.yaml for ci ([1637395](https://github.com/terwer/siyuan-plugin-custom-slug/commit/163739536f579964a31eb83877b264d2f5550fe1))
+* **deps-dev:** bump @sveltejs/vite-plugin-svelte from 2.0.3 to 2.4.2 ([abd32bd](https://github.com/terwer/siyuan-plugin-custom-slug/commit/abd32bda2f561fd5d2fbfb930be4ccd53cf56223))
+* **deps-dev:** bump @terwer/eslint-config-custom from 1.2.0 to 1.3.6 ([9fa19c5](https://github.com/terwer/siyuan-plugin-custom-slug/commit/9fa19c5a9b249f1eec674f8a07ba7a100585718d))
+* **deps-dev:** bump siyuan from 0.7.1 to 0.7.5 ([d7f0de1](https://github.com/terwer/siyuan-plugin-custom-slug/commit/d7f0de1db2e1956c27d764aa6a881482510acca3))
+* **deps-dev:** bump svelte from 3.59.1 to 4.0.0 ([a643ae5](https://github.com/terwer/siyuan-plugin-custom-slug/commit/a643ae5c498542bfb87091df60ef1dbd2d1360f2))
+* **deps-dev:** bump typescript from 5.0.4 to 5.1.6 ([7574963](https://github.com/terwer/siyuan-plugin-custom-slug/commit/7574963f25e8078c3a04114dd296f8a5c3073041))
+* **deps-dev:** bump vite-plugin-static-copy from 0.15.0 to 0.16.0 ([8e0e0fe](https://github.com/terwer/siyuan-plugin-custom-slug/commit/8e0e0fed01c9eebac052db9ba5a40beecda33929))
+* 升级 siyuan 到 0.7.2 ([c57220a](https://github.com/terwer/siyuan-plugin-custom-slug/commit/c57220ac0ff3033840bce017893236e382623585))
+
 ## [0.1.0](https://github.com/terwer/siyuan-plugin-custom-slug/compare/v0.0.3...v0.1.0) (2023-06-01)
 ### Features
 * 刚刚闹了个乌龙，重新打包一次 ([6c4d62b](https://github.com/terwer/siyuan-plugin-custom-slug/commit/6c4d62bb00e34f3e568bb789bb70aefc75af939f))
