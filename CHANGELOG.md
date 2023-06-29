@@ -2,15 +2,9 @@
 <a name="v0.0.3"></a>
 
 ## [0.3.0](https://github.com/terwer/siyuan-plugin-custom-slug/compare/v0.2.0...v0.3.0) (2023-06-29)
-
-
 ### Features
-
-* 支持批量生成和增量生成 ([52c4a21](https://github.com/terwer/siyuan-plugin-custom-slug/commit/52c4a214e997cdd95875ee1b67e99651df04e1a4))
 * 支持批量生成和增量生成 ([69d2614](https://github.com/terwer/siyuan-plugin-custom-slug/commit/69d2614ffc37194001b2b8a384b1d1b5d8a49edb))
-
 ## [0.2.0](https://github.com/terwer/siyuan-plugin-custom-slug/compare/v0.1.0...v0.2.0) (2023-06-29)
-### Features
 * [#25](https://github.com/terwer/siyuan-plugin-custom-slug/issues/25) 兼容 docker ([848b56e](https://github.com/terwer/siyuan-plugin-custom-slug/commit/848b56e85bd3768f0e99c7e911067079b9230b28))
 * 体验优化，支持禁用别名，支持去除拼音-，支持清空命名 ([e819d4b](https://github.com/terwer/siyuan-plugin-custom-slug/commit/e819d4b93aa886b8a10ae7fa374695349e0525aa))
 ### Bug Fixes
