@@ -35,7 +35,7 @@
     "typescript": "^5.1.6",
     "vite": "^4.3.9",
     "vite-plugin-static-copy": "^0.16.0",
-    "vite-plugin-zip-pack": "^1.0.5"
+    "vite-plugin-zip-pack": "^1.0.6"
   },
   "dependencies": {
     "lodash": "^4.17.21",
