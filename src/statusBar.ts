@@ -37,6 +37,6 @@ export const initStatusBar = (pluginInstance: SlugPlugin) => {
 }
 
 export const updateStatusBar = (pluginInstance: SlugPlugin, statusText) => {
-  console.log(pluginInstance.statusBarElement)
+  // console.log(pluginInstance.statusBarElement)
   pluginInstance.statusBarElement.innerHTML = `<div class="toolbar__item b3-tooltips b3-tooltips__w" aria-label="generate slug status" style="font-size: 12px;">${statusText}</div>`
 }

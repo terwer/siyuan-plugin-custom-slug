@@ -14,9 +14,9 @@ dependencies:
   shorthash2:
     specifier: ^1.0.3
     version: 1.0.3
-  transliteration:
-    specifier: ^2.3.5
-    version: 2.3.5
+  zhi-common:
+    specifier: ^1.13.1
+    version: 1.13.1
   zhi-lib-base:
     specifier: ^0.4.2
     version: 0.4.2
@@ -855,7 +855,6 @@ packages:
 
   /argparse@2.0.1:
     resolution: {integrity: sha512-8+9WqebbFzpX9OR+Wa6O29asIogeRMzcGtAINdpMHHyAg10f05aSFVBbcEqGf/PXw1EjAZ+q2/bEBg3DvurK3Q==}
-    dev: true
 
   /aria-query@5.3.0:
     resolution: {integrity: sha512-b0P0sZPKtyu8HkeRAfCq0IfURZK+SuwMjY1UXGBU27wpAiTwQAIlq56IbIO+ytk/JjS1fMR14ee5WBBfKi5J6A==}
@@ -1671,7 +1670,6 @@ packages:
     hasBin: true
     dependencies:
       argparse: 2.0.1
-    dev: true
 
   /json-schema-traverse@0.4.1:
     resolution: {integrity: sha512-xbbCH5dCYU5T8LcEhhuh7HJ88HXuW3qsI3Y0zOZFKfZEHcpWiHU/Jxzk629Brsab/mMiHQti9wMP+845RPe3Vg==}
@@ -2606,6 +2604,18 @@ packages:
     engines: {node: '>=10'}
     dev: true
 
+  /zhi-common@1.13.1:
+    resolution: {integrity: sha512-70RsXqyd3z0U6sWwyTKd2/eJL70KT45qmZD4LIML8Xn5rE6L02d9yaSC4YHB21P9Ws3j1d2NfcqX804axTT3SQ==}
+    dependencies:
+      js-yaml: 4.1.0
+      transliteration: 2.3.5
+      zhi-lib-base: 0.4.4
+    dev: false
+
   /zhi-lib-base@0.4.2:
     resolution: {integrity: sha512-kfKgN4hb5efUf+k5Y9028CVV1p/hsnK0NbRsxI3uwJoTlHfTBjfi6ZfrkhDn+XEnEYeWidO75sx4RdcnT7C3KA==}
+    dev: false
+
+  /zhi-lib-base@0.4.4:
+    resolution: {integrity: sha512-adu1KXVDRjsE/tshAXUeRW62VkaNIb0AOcYXnjgHODsw2gJlkxbvVn2wISuboCiwKv1JsD5gbmxdzSkRyJiC5Q==}
     dev: false

@@ -23,64 +23,7 @@
  * questions.
  */
 
-import { slugify } from "transliteration"
 import debounce from "lodash.debounce"
-
-/**
- * 中文翻译成英文别名
- * @param q 中文名
- * @returns {Promise<unknown>}
- */
-export const zhSlugify = async (q: string): Promise<string> => {
-  // const v = await fetch('https://clients5.google.com/translate_a/t?client=dict-chrome-ex&sl=auto&tl=en-US&q=' + q);
-  const v = await fetch("https://api.terwer.space/api/translate?q=" + q)
-  const json = await v.json()
-  let res = json[0][0]
-  res = res.replaceAll(/-/g, "")
-  res = res.replaceAll(/\./g, "")
-  res = res.replaceAll(/~/g, "")
-
-  res = slugify(res)
-
-  res = res.replaceAll(/@/g, "")
-
-  return res
-}
-
-/**
- * 拼音转别名
- *
- * @param q 中文名
- */
-export const pinyinSlugify = (q: string): string => slugify(q)
-
-/**
- * 根据拼音南湖区哦首字母
- *
- * @param pinyin
- */
-export const getFirstLetters = (pinyin: string) => {
-  let firstLetters = ""
-  const pinyinArr = pinyin.split("-")
-  pinyinArr.forEach((item) => {
-    firstLetters += item[0]
-  })
-  return firstLetters
-}
-
-/**
- * 移除标题数字
- * @param str
- */
-export const removeTitleNumber = (str: string): string => {
-  let newstr = str
-
-  // 移除序号
-  const publisherRegex = /([0-9]*)\./
-  newstr = newstr.replace(publisherRegex, "")
-
-  return newstr
-}
 
 /**
  * 封装可取消的防抖函数

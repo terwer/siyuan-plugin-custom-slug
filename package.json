@@ -41,7 +41,7 @@
     "lodash": "^4.17.21",
     "lodash.debounce": "^4.0.8",
     "shorthash2": "^1.0.3",
-    "transliteration": "^2.3.5",
+    "zhi-common": "^1.13.1",
     "zhi-lib-base": "^0.4.2"
   }
 }
