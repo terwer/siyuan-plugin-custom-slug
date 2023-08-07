@@ -26,10 +26,10 @@
 import PageUtil from "../utils/pageUtil"
 import { confirm, showMessage } from "siyuan"
 import SlugPlugin from "../index"
-import { generateCurrentTime, getFirstLetters, pinyinSlugify, removeTitleNumber, zhSlugify } from "../utils/utils"
-import shortHash from "shorthash2"
+import { generateCurrentTime } from "../utils/utils"
 import { ConfigManager } from "../store/config"
 import { updateStatusBar } from "../statusBar"
+import { AliasTranslator, StrUtil } from "zhi-common"
 
 /**
  * AttrService类提供了自动生成和保存属性的方法
@@ -129,15 +129,12 @@ export class AttrService {
       const page = pageData.data[0] as any
       pluginInstance.logger.debug("page=>", page)
 
-      const title = removeTitleNumber(page.content).trim()
+      const title = AliasTranslator.fixTitle(page.content, true)
+      const slugTitle = await AliasTranslator.wordSlugify(title)
+      const pinyinTitle = AliasTranslator.pinyinSlugify(title)
+      const pinyinInitialsTitle = StrUtil.getFirstLetters(pinyinTitle)
 
-      const newstr = page.content + new Date().toISOString()
-      const hashstr = ["-", shortHash(newstr).toLowerCase()].join("")
-
-      const slugTitle = await zhSlugify(title)
-      const pinyinTitle = pinyinSlugify(title)
-      const pinyinInitialsTitle = getFirstLetters(pinyinTitle)
-
+      const hashstr = AliasTranslator.hashstr(title)
       const slug = slugTitle + hashstr
       const pinyin = pinyinTitle + hashstr
       const pinyinInitials = pinyinInitialsTitle + hashstr
