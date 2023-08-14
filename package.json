@@ -40,7 +40,7 @@
   "dependencies": {
     "lodash": "^4.17.21",
     "lodash.debounce": "^4.0.8",
-    "zhi-common": "^1.13.3",
+    "zhi-common": "^1.14.2",
     "zhi-lib-base": "^0.4.4"
   }
 }
