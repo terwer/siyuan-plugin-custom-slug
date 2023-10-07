@@ -58,6 +58,7 @@
     nameSwitch = settingConfig?.nameSwitch ?? false
     clearName = settingConfig?.clearName ?? false
     removePinyinSplit = settingConfig?.removePinyinSplit ?? false
+    auto = settingConfig?.auto ?? false
   })
 </script>
 

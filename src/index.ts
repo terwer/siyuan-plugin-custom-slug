@@ -61,25 +61,26 @@ export default class SlugPlugin extends Plugin {
     this.isMobile = frontEnd === "mobile" || frontEnd === "browser-mobile"
 
     await initTopbar(this)
-    await initStatusBar(this)
+    initStatusBar(this)
   }
 
   onLayoutReady() {
+    const that = this
     const handleRenameEvent = createCancelableDebounce(async () => {
       // 读取配置
-      const settingConfig = (await ConfigManager.loadConfig(this)) as any
-      const autoSwitch = settingConfig?.autoSwitch ?? false
+      const settingConfig = (await ConfigManager.loadConfig(that)) as any
+      const autoSwitch = settingConfig?.auto ?? false
       if (!autoSwitch) {
-        this.showError()
+        this.logger.warn("自动生成别名未开启")
         return
       }
 
+      this.showLoading()
       const result = await AttrService.autoGenerateAttrs(this)
       if (!result) {
         this.showError()
         return
       }
-
       this.showSuccess()
     }, 2000)
 
@@ -89,7 +90,6 @@ export default class SlugPlugin extends Plugin {
         return
       }
 
-      this.showLoading()
       handleRenameEvent()
     }
     this.eventBus.on("ws-main", this.renameEvent)
