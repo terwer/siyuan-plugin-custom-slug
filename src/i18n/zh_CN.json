@@ -26,6 +26,8 @@
   "settingConfigSaveSuccess": "配置保存成功",
   "removePinyinSplitSwitch": "去除拼音别名-",
   "removePinyinSplitSwitchTips": "完整拼音之间不加-，方便搜索",
+  "autoSwitch": "自动生成别名",
+  "autoSwitchTips": "开启之后将在标题改变的时候自动生成别名",
   "clearName": "清空命名",
   "clearNameTips": "注意：开启之后，会将命名清空，仅用于修复，如果你自己改过，请关闭此选项",
   "batchMakeSlug": "批量生成别名",

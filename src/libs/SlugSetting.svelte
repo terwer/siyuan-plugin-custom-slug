@@ -33,6 +33,7 @@
   let nameSwitch
   let clearName
   let removePinyinSplit
+  let auto
   let settingConfig = {} as any
 
   const onSaveSetting = async () => {
@@ -41,6 +42,7 @@
     settingConfig.nameSwitch = nameSwitch
     settingConfig.clearName = clearName
     settingConfig.removePinyinSplit = removePinyinSplit
+    settingConfig.auto = auto
     await ConfigManager.saveConfig(pluginInstance, settingConfig)
     pluginInstance.logger.debug("saved setting config =>", settingConfig)
     showMessage(`${pluginInstance.i18n.settingConfigSaveSuccess}`, 2000, "info")
@@ -56,6 +58,7 @@
     nameSwitch = settingConfig?.nameSwitch ?? false
     clearName = settingConfig?.clearName ?? false
     removePinyinSplit = settingConfig?.removePinyinSplit ?? false
+    auto = settingConfig?.auto ?? false
   })
 </script>
 
@@ -91,6 +94,15 @@
         type="checkbox"
         bind:checked={removePinyinSplit}
       />
+    </label>
+
+    <label class="fn__flex b3-label">
+      <div class="fn__flex-1">
+        {pluginInstance.i18n.autoSwitch}
+        <div class="b3-label__text">{pluginInstance.i18n.autoSwitchTips}</div>
+      </div>
+      <span class="fn__space" />
+      <input id="auto" class="b3-switch fn__flex-center" type="checkbox" bind:checked={auto} />
     </label>
 
     <div class="b3-dialog__action">
