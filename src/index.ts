@@ -33,6 +33,7 @@ import "./index.styl"
 import { createCancelableDebounce } from "./utils/utils"
 import { AttrService } from "./service/attrService"
 import { initStatusBar } from "./statusBar"
+import { ConfigManager } from "./store/config"
 
 /**
  * 别名插件
@@ -65,11 +66,20 @@ export default class SlugPlugin extends Plugin {
 
   onLayoutReady() {
     const handleRenameEvent = createCancelableDebounce(async () => {
+      // 读取配置
+      const settingConfig = (await ConfigManager.loadConfig(this)) as any
+      const autoSwitch = settingConfig?.autoSwitch ?? false
+      if (!autoSwitch) {
+        this.showError()
+        return
+      }
+
       const result = await AttrService.autoGenerateAttrs(this)
       if (!result) {
         this.showError()
         return
       }
+
       this.showSuccess()
     }, 2000)
 
@@ -109,12 +119,9 @@ export default class SlugPlugin extends Plugin {
   }
 
   public showError() {
-    try {
-      document.querySelector(".protyle:not(.fn__none) .protyle-title .protyle-attr.loading").innerHTML =
-        this.i18n.tipsLoadingError
-    } catch (e) {
-      showMessage(`${this.i18n.tipsLoadingError} => ${e.toString()}`, 2000, "error")
-    }
+    document.querySelector(".protyle:not(.fn__none) .protyle-title .protyle-attr.loading").innerHTML = ""
+    document.querySelector(".protyle:not(.fn__none) .protyle-title .protyle-attr").classList.remove("loading")
+    showMessage(`${this.i18n.tipsLoadingError}`, 2000, "error")
   }
 
   public showSuccess() {
