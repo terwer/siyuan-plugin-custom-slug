@@ -26,6 +26,8 @@
   "settingConfigSaveSuccess": "The configuration is saved successfully",
   "removePinyinSplitSwitch": "Remove Pinyin aliases-",
   "removePinyinSplitSwitchTips": "Complete pinyin without adding - for easy search",
+  "autoSwitch": "Automatically generate aliases",
+  "autoSwitchTips": "Upon activation, aliases will be automatically generated when the title is modified",
   "clearName": "Clear name",
   "clearNameTips": "Note: After opening, the naming will be cleared for repair only. If you have made changes yourself, please turn off this option",
   "batchMakeSlug": "Generate aliases in bulk",
