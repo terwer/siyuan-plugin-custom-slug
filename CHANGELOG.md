@@ -2,37 +2,20 @@
 <a name="v0.0.3"></a>
 
 ## [0.4.0](https://github.com/terwer/siyuan-plugin-custom-slug/compare/v0.3.0...v0.4.0) (2023-10-07)
-
-
 ### Features
-
-* 抽取生成别名为通用逻辑 ([60ebb0d](https://github.com/terwer/siyuan-plugin-custom-slug/commit/60ebb0d07c704626d72db6fee255c9973f48b249))
-* 抽取生成别名为通用逻辑 ([3dc4194](https://github.com/terwer/siyuan-plugin-custom-slug/commit/3dc419423a003e76471033fe67be25a1be754042))
 * 抽取生成别名为通用逻辑 ([ba25d61](https://github.com/terwer/siyuan-plugin-custom-slug/commit/ba25d612a85f9935e0bc4bbb57f0a0f2210fd97a))
-* 新增自动生成别名开关 ([ce4205f](https://github.com/terwer/siyuan-plugin-custom-slug/commit/ce4205f2cd6fffac270129ac6203086e9e4b512e))
-* 新增自动生成别名开关 ([7e92c4e](https://github.com/terwer/siyuan-plugin-custom-slug/commit/7e92c4ead337e4da8d9085c31dc95b8c930d36f7))
 * 新增自动生成别名开关 ([396f204](https://github.com/terwer/siyuan-plugin-custom-slug/commit/396f2046ab2ce067deb0f590c8d8633bf035f89a))
-
-
 ### Bug Fixes
-
 * **deps:** bump pnpm/action-setup from 2.2.4 to 2.4.0 ([287ac40](https://github.com/terwer/siyuan-plugin-custom-slug/commit/287ac408c4bbe7cca63e5ca2fb7a737c19c6c80f))
-
-
 ### Miscellaneous
-
 * **deps-dev:** bump @tsconfig/svelte from 4.0.1 to 5.0.0 ([68cd257](https://github.com/terwer/siyuan-plugin-custom-slug/commit/68cd257ecb8af0787c373654c881a176fd4c59a6))
 * **deps-dev:** bump vite-plugin-static-copy from 0.16.0 to 0.17.0 ([8bed0fc](https://github.com/terwer/siyuan-plugin-custom-slug/commit/8bed0fc5a0c62ddd33a5d51f8251e088637c5148))
-
 ## [0.3.0](https://github.com/terwer/siyuan-plugin-custom-slug/compare/v0.2.0...v0.3.0) (2023-06-29)
-### Features
 * 支持批量生成和增量生成 ([69d2614](https://github.com/terwer/siyuan-plugin-custom-slug/commit/69d2614ffc37194001b2b8a384b1d1b5d8a49edb))
 ## [0.2.0](https://github.com/terwer/siyuan-plugin-custom-slug/compare/v0.1.0...v0.2.0) (2023-06-29)
 * [#25](https://github.com/terwer/siyuan-plugin-custom-slug/issues/25) 兼容 docker ([848b56e](https://github.com/terwer/siyuan-plugin-custom-slug/commit/848b56e85bd3768f0e99c7e911067079b9230b28))
 * 体验优化，支持禁用别名，支持去除拼音-，支持清空命名 ([e819d4b](https://github.com/terwer/siyuan-plugin-custom-slug/commit/e819d4b93aa886b8a10ae7fa374695349e0525aa))
-### Bug Fixes
 * **deps:** bump zhi-lib-base from 0.0.2 to 0.4.2 ([a9e3fc3](https://github.com/terwer/siyuan-plugin-custom-slug/commit/a9e3fc39d96b8793e2daf525b7be839b7631d4bc))
-### Miscellaneous
 * add pnpm-lock.yaml for ci ([1637395](https://github.com/terwer/siyuan-plugin-custom-slug/commit/163739536f579964a31eb83877b264d2f5550fe1))
 * **deps-dev:** bump @sveltejs/vite-plugin-svelte from 2.0.3 to 2.4.2 ([abd32bd](https://github.com/terwer/siyuan-plugin-custom-slug/commit/abd32bda2f561fd5d2fbfb930be4ccd53cf56223))
 * **deps-dev:** bump @terwer/eslint-config-custom from 1.2.0 to 1.3.6 ([9fa19c5](https://github.com/terwer/siyuan-plugin-custom-slug/commit/9fa19c5a9b249f1eec674f8a07ba7a100585718d))
