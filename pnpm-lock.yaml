@@ -15,8 +15,8 @@ dependencies:
     specifier: ^1.13.3
     version: 1.13.3
   zhi-lib-base:
-    specifier: ^0.4.4
-    version: 0.4.4
+    specifier: ^0.6.0
+    version: 0.6.0
 
 devDependencies:
   '@sveltejs/vite-plugin-svelte':
@@ -2628,4 +2628,8 @@ packages:
 
   /zhi-lib-base@0.4.4:
     resolution: {integrity: sha512-adu1KXVDRjsE/tshAXUeRW62VkaNIb0AOcYXnjgHODsw2gJlkxbvVn2wISuboCiwKv1JsD5gbmxdzSkRyJiC5Q==}
+    dev: false
+
+  /zhi-lib-base@0.6.0:
+    resolution: {integrity: sha512-rxBe1ubPbgFOTS+0bWL+kNH7LgL2lm4RFz4YYZJ9heofbNNeYm0gR/GtsVI54WLRWFOgnYwU2/FJPLKud5pa8w==}
     dev: false
