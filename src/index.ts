@@ -110,8 +110,8 @@ export default class SlugPlugin extends Plugin {
   //================================================================
   public showLoading() {
     try {
-      document.querySelector(".protyle:not(.fn__none) .protyle-title .protyle-attr").classList.add("loading")
-      document.querySelector(".protyle:not(.fn__none) .protyle-title .protyle-attr.loading").innerHTML =
+      document.querySelector(".protyle:not(.fn__none):not(.protyle-lite-fragment) .protyle-title .protyle-attr").classList.add("loading")
+      document.querySelector(".protyle:not(.fn__none):not(.protyle-lite-fragment) .protyle-title .protyle-attr.loading").innerHTML =
         this.i18n.tipsLoading
     } catch (e) {
       // showMessage(`${this.i18n.tipsLoadingError} => ${e.toString()}`, 2000, "error")
@@ -119,14 +119,14 @@ export default class SlugPlugin extends Plugin {
   }
 
   public showError() {
-    document.querySelector(".protyle:not(.fn__none) .protyle-title .protyle-attr.loading").innerHTML = ""
-    document.querySelector(".protyle:not(.fn__none) .protyle-title .protyle-attr").classList.remove("loading")
+    document.querySelector(".protyle:not(.fn__none):not(.protyle-lite-fragment) .protyle-title .protyle-attr.loading").innerHTML = ""
+    document.querySelector(".protyle:not(.fn__none):not(.protyle-lite-fragment) .protyle-title .protyle-attr").classList.remove("loading")
     showMessage(`${this.i18n.tipsLoadingError}`, 2000, "error")
   }
 
   public showSuccess() {
     try {
-      document.querySelector(".protyle:not(.fn__none) .protyle-title .protyle-attr").classList.remove("loading")
+      document.querySelector(".protyle:not(.fn__none):not(.protyle-lite-fragment) .protyle-title .protyle-attr").classList.remove("loading")
     } catch (e) {
       showMessage(`${this.i18n.tipsLoadingError} => ${e.toString()}`, 2000, "error")
     }
